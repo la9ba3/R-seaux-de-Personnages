@@ -43,3 +43,5 @@ Pour generer  des graphes  :
 ```powershell
 .\.venv\Scripts\python.exe scripts/export_graph_figures.py
 ```
+
+Les graphes sont généres dans output/figures/
