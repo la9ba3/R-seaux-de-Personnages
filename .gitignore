@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Outputs
+outputs/
+data/interim/
+data/processed/
+data/submissions/
+
+# OS
+.DS_Store
+Thumbs.db
