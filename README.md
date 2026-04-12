@@ -27,16 +27,19 @@ Reglage des aretes:
 
 ## Variantes leaderboard
 
-Pour generer plusieurs CSV candidats rapidement:
+Pour generer  CSV candidats :
 
 ```powershell
-.\.venv\Scripts\python.exe scripts/generate_submission_variants.py
+.\.venv\Scripts\python.exe scripts/run_all_chapters.py
 ```
 
 Les fichiers sont ecrits dans `data/submissions/`:
 
-- `submission_v_current.csv`
-- `submission_v_weight2.csv`
-- `submission_v_keep_spacy.csv`
+- `submission.csv`
 
-Note: toutes ces variantes gardent `cooccurrence_window=25` (contrainte cahier des charges).
+
+Pour generer  des graphes  :
+
+```powershell
+.\.venv\Scripts\python.exe scripts/export_graph_figures.py
+```
