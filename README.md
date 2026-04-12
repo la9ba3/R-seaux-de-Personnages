@@ -27,7 +27,7 @@ Reglage des aretes:
 
 ## Variantes leaderboard
 
-Pour generer  CSV candidats :
+--Pour generer  CSV candidats :
 
 ```powershell
 .\.venv\Scripts\python.exe scripts/run_all_chapters.py
@@ -38,7 +38,7 @@ Les fichiers sont ecrits dans `data/submissions/`:
 - `submission.csv`
 
 
-Pour generer  des graphes  :
+--Pour generer  des graphes  :
 
 ```powershell
 .\.venv\Scripts\python.exe scripts/export_graph_figures.py
