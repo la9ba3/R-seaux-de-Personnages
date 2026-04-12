@@ -87,7 +87,7 @@ def _filter_interactions(
 def extract_interactions_from_mentions(
     resolved_mentions: list[dict],
     window_size: int = 25,
-    min_edge_weight: int = 2,
+    min_edge_weight: int = 1,
     min_mentions_for_weight1: int = 2,
 ) -> list[dict]:
     """
