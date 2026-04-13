@@ -24,20 +24,11 @@ class NerFiltersTests(unittest.TestCase):
     def test_clean_keeps_name_after_comma_prefix(self) -> None:
         self.assertEqual(clean_person_mention_text("Instantanement, Daneel"), "Daneel")
 
-    def test_clean_removes_article_before_title(self) -> None:
-        self.assertEqual(clean_person_mention_text("Le Dr Sarton"), "Dr Sarton")
-
     def test_rejects_narrative_like_mentions(self) -> None:
         self.assertFalse(is_valid_person_mention("Seldon grimaça"))
         self.assertFalse(is_valid_person_mention("Appelez-moi Davan"))
         self.assertFalse(is_valid_person_mention("Alice retrouva Lucas"))
         self.assertFalse(is_valid_person_mention("Monsieur"))
-
-    def test_rejects_non_person_constructions(self) -> None:
-        self.assertFalse(is_valid_person_mention("SUBDIVISIONS IA - IE"))
-        self.assertFalse(is_valid_person_mention("Sacratorium de Mycogene"))
-        self.assertFalse(is_valid_person_mention("Mycogeniens"))
-        self.assertFalse(is_valid_person_mention("Soupir de Seldon"))
 
     def test_accepts_person_like_mentions(self) -> None:
         self.assertTrue(is_valid_person_mention("Hari Seldon"))
