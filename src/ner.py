@@ -47,6 +47,7 @@ CORPUS_BLACKLIST = {
     "pourvu qu",
     "n avez qu",
     "s avise de l utiliser",
+    "oute-de-Pluie Quarante"
 }
 
 NARRATIVE_OR_DISCOURSE_WORDS = {
@@ -167,6 +168,20 @@ ENUMERATION_NAME_RE = re.compile(
     rf"\b{CAPITALIZED_NAME_PATTERN}(?:\s*,\s*{CAPITALIZED_NAME_PATTERN})+\s*(?:,\s*)?(?:et|ou)\s+{CAPITALIZED_NAME_PATTERN}\b"
 )
 
+NON_PERSON_KEYWORDS = {
+    "subdivisions ia ie",
+    "sacratorium de mycogene",
+    "mycogeniens",
+    "soupir de seldon",
+}
+
+NON_PERSON_DE_HEADS = {
+    "soupir",
+    "sacratorium",
+    "subdivision",
+    "subdivisions",
+}
+
 
 def _normalize_token(text: str) -> str:
     normalized = text.lower().strip().replace("’", "'")
@@ -187,6 +202,25 @@ def _is_allowed_lower_part(raw_part: str, normalized_part: str) -> bool:
     # Cas d'Artagnan, l'Hermite...
     if re.match(r"^[dl]['’][A-ZÀ-ÖØ-Þ]", raw_part):
         return True
+    return False
+
+
+def has_acronym_cluster(text: str) -> bool:
+    if re.search(r"\b[A-Z]{2,}\s*-\s*[A-Z]{2,}\b", text):
+        return True
+
+    uppercase_tokens = re.findall(r"\b[A-Z]{2,}\b", text)
+    return len(uppercase_tokens) >= 2
+
+
+def is_non_person_construction(normalized_text: str) -> bool:
+    if normalized_text in NON_PERSON_KEYWORDS:
+        return True
+
+    words = normalized_text.split()
+    if len(words) >= 3 and words[1] == "de" and words[0] in NON_PERSON_DE_HEADS:
+        return True
+
     return False
 
 
@@ -233,6 +267,13 @@ def clean_person_mention_text(text: str) -> str:
             candidate = comma_parts[-1]
             if starts_like_proper_name(candidate):
                 cleaned = candidate
+
+    title_regex = r"(?:%s)" % "|".join(TITLE_PATTERNS)
+    cleaned = re.sub(
+        rf"^(?:[Ll]e\s+|[Ll]a\s+|[Ll]['â€™]\s*)(?={title_regex}\b)",
+        "",
+        cleaned,
+    )
 
     cleaned = re.sub(r"\s+(?:[ndlstcjqu]|qu)['’]\s*$", "", cleaned, flags=re.IGNORECASE)
     cleaned = re.sub(r"\s+", " ", cleaned).strip()
@@ -532,6 +573,12 @@ def is_valid_person_mention(text: str) -> bool:
 
     normalized = normalize_for_antidictionary(cleaned)
     if not normalized:
+        return False
+
+    if is_non_person_construction(normalized):
+        return False
+
+    if has_acronym_cluster(cleaned):
         return False
 
     if normalized in CORPUS_BLACKLIST:

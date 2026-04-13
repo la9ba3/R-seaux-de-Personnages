@@ -65,6 +65,17 @@ class AliasResolutionTests(unittest.TestCase):
         self.assertEqual(len(result["characters"][0]["mention_ids"]), 3)
         self.assertIn("R. Daneel Olivaw", result["characters"][0]["aliases"])
 
+    def test_drops_ambiguous_singleton_when_all_candidates_are_weak(self) -> None:
+        mentions = [
+            {"mention_id": "m1", "text": "Kiangtow Randa", "start_token": 0, "end_token": 1},
+            {"mention_id": "m2", "text": "Lisung Randa", "start_token": 10, "end_token": 11},
+            {"mention_id": "m3", "text": "Randa", "start_token": 20, "end_token": 20},
+        ]
+
+        result = resolve_aliases(mentions)
+        names = sorted(character["canonical_name"] for character in result["characters"])
+        self.assertEqual(names, ["Kiangtow Randa", "Lisung Randa"])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -339,6 +339,41 @@ def merge_groups_by_dominant_anchor(groups: dict) -> dict:
     return merged
 
 
+def drop_ambiguous_single_word_groups(groups: dict) -> dict:
+    """
+    Retire une forme courte singleton ambigue (ex: "Randa") quand
+    plusieurs formes longues "X Randa" coexistent avec de faibles preuves.
+    """
+    normalized_keys = list(groups.keys())
+    merged = {key: list(values) for key, values in groups.items()}
+
+    long_forms = [key for key in normalized_keys if len(key.split()) >= 2]
+    short_forms = [key for key in normalized_keys if len(key.split()) == 1]
+
+    for short_form in short_forms:
+        if short_form not in merged:
+            continue
+
+        if len(merged[short_form]) != 1:
+            continue
+
+        candidates = []
+        for long_form in long_forms:
+            if long_form not in merged:
+                continue
+            if long_form.split()[-1] == short_form:
+                candidates.append(long_form)
+
+        if len(candidates) < 2:
+            continue
+
+        candidate_counts = [len(merged[candidate]) for candidate in candidates]
+        if all(count <= 2 for count in candidate_counts):
+            del merged[short_form]
+
+    return merged
+
+
 def resolve_aliases(mentions: list[dict]) -> dict:
     """
     Résolution d'alias en plusieurs étapes.
@@ -348,6 +383,7 @@ def resolve_aliases(mentions: list[dict]) -> dict:
     groups = merge_groups_by_first_name(groups)
     groups = merge_groups_by_initial_prefix(groups)
     groups = merge_groups_by_similarity(groups)
+    groups = drop_ambiguous_single_word_groups(groups)
 
     resolved_mentions = []
     characters = []
