@@ -227,6 +227,13 @@ def clean_person_mention_text(text: str) -> str:
     cleaned = re.sub(r"^[\"'«»“”()\[\]{}.,;:!?]+", "", cleaned)
     cleaned = re.sub(r"[\"'«»“”()\[\]{}.,;:!?]+$", "", cleaned)
 
+    if "," in cleaned:
+        comma_parts = [part.strip() for part in cleaned.split(",") if part.strip()]
+        if len(comma_parts) >= 2:
+            candidate = comma_parts[-1]
+            if starts_like_proper_name(candidate):
+                cleaned = candidate
+
     cleaned = re.sub(r"\s+(?:[ndlstcjqu]|qu)['’]\s*$", "", cleaned, flags=re.IGNORECASE)
     cleaned = re.sub(r"\s+", " ", cleaned).strip()
 

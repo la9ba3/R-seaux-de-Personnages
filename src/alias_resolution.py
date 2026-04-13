@@ -175,6 +175,45 @@ def merge_groups_by_first_name(groups: dict) -> dict:
     return merged
 
 
+def merge_groups_by_initial_prefix(groups: dict) -> dict:
+    """
+    Fusionne une forme courte "R Daneel" vers "R Daneel Olivaw" si la cible est unique.
+    """
+    normalized_keys = list(groups.keys())
+    merged = {key: list(values) for key, values in groups.items()}
+
+    short_forms = [
+        key
+        for key in normalized_keys
+        if len(key.split()) == 2 and len(key.split()[0]) == 1
+    ]
+    long_forms = [key for key in normalized_keys if len(key.split()) >= 3]
+
+    for short_form in short_forms:
+        if short_form not in merged:
+            continue
+
+        short_words = short_form.split()
+        initial = short_words[0]
+        pivot = short_words[1]
+        targets = []
+
+        for long_form in long_forms:
+            if long_form not in merged:
+                continue
+
+            long_words = long_form.split()
+            if len(long_words[0]) == 1 and long_words[0] == initial and long_words[1] == pivot:
+                targets.append(long_form)
+
+        if len(targets) == 1:
+            target = targets[0]
+            merged[target].extend(merged[short_form])
+            del merged[short_form]
+
+    return merged
+
+
 def levenshtein_distance(a: str, b: str) -> int:
     """
     Calcule la distance de Levenshtein entre deux chaînes.
@@ -307,6 +346,7 @@ def resolve_aliases(mentions: list[dict]) -> dict:
     groups = build_initial_groups(mentions)
     groups = merge_groups_by_last_name(groups)
     groups = merge_groups_by_first_name(groups)
+    groups = merge_groups_by_initial_prefix(groups)
     groups = merge_groups_by_similarity(groups)
 
     resolved_mentions = []

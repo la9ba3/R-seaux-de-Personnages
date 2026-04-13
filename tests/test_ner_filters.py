@@ -21,6 +21,9 @@ class NerFiltersTests(unittest.TestCase):
         self.assertEqual(clean_person_mention_text("Cléon Ier qu’"), "Cléon Ier")
         self.assertEqual(clean_person_mention_text("Hélicon je"), "Hélicon")
 
+    def test_clean_keeps_name_after_comma_prefix(self) -> None:
+        self.assertEqual(clean_person_mention_text("Instantanement, Daneel"), "Daneel")
+
     def test_rejects_narrative_like_mentions(self) -> None:
         self.assertFalse(is_valid_person_mention("Seldon grimaça"))
         self.assertFalse(is_valid_person_mention("Appelez-moi Davan"))

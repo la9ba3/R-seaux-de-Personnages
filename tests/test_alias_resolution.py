@@ -53,6 +53,18 @@ class AliasResolutionTests(unittest.TestCase):
         self.assertEqual(len(by_name["Elijah Baley"]["mention_ids"]), 3)
         self.assertEqual(len(by_name["Bentley Baley"]["mention_ids"]), 1)
 
+    def test_merges_initial_form_into_extended_name(self) -> None:
+        mentions = [
+            {"mention_id": "m1", "text": "R. Daneel Olivaw", "start_token": 0, "end_token": 2},
+            {"mention_id": "m2", "text": "R. Daneel", "start_token": 10, "end_token": 11},
+            {"mention_id": "m3", "text": "Daneel", "start_token": 20, "end_token": 20},
+        ]
+
+        result = resolve_aliases(mentions)
+        self.assertEqual(len(result["characters"]), 1)
+        self.assertEqual(len(result["characters"][0]["mention_ids"]), 3)
+        self.assertIn("R. Daneel Olivaw", result["characters"][0]["aliases"])
+
 
 if __name__ == "__main__":
     unittest.main()
