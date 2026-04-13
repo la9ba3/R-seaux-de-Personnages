@@ -1,5 +1,5 @@
 from pathlib import Path
-
+import os
 
 def get_default_config() -> dict:
     """
@@ -24,7 +24,8 @@ def get_default_config() -> dict:
         "chapter_file_extension": ".txt.preprocessed",
 
         # NER
-        "ner_model": "fr_core_news_lg",
+        #"ner_model": "fr_core_news_lg",
+        "ner_model": os.getenv("NER_MODEL", "fr_core_news_lg"),
         # Sources autorisees a survivre au filtre singleton.
         "keep_singleton_sources": [
             "rule_title",
