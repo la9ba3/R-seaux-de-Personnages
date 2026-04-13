@@ -34,6 +34,11 @@ from preprocessing import clean_text, tokenize_text
 MAX_TEXT_LENGTH = 120_000
 _MODEL = None
 _CONFIG = get_default_config()
+DEMO_INPUT_TEXT = (
+    "A Paris, Alice retrouve Lucas, Emma, Gabriel et Chloe avant le depart. "
+    "Dans le train, Julien discute avec Sofia, Nathan et Lina. "
+    "Pendant ce temps, Thomas, Sarah et Antoine parlent avec Lea, Adam et Zoe."
+)
 UI_TITLE_ONLY_WORDS = {
     "m",
     "mme",
@@ -400,6 +405,7 @@ def render_page(
 ) -> str:
     escaped_text = escape(input_text)
     escaped_message = f"<p class='message'>{escape(message)}</p>" if message else "<p class='message'></p>"
+    demo_text_literal = json.dumps(DEMO_INPUT_TEXT, ensure_ascii=False)
 
     return (
         "<!doctype html>"
@@ -432,6 +438,7 @@ def render_page(
         f"<textarea id='input_text' name='input_text' placeholder='Colle un chapitre ici...'>{escaped_text}</textarea>"
         "<div class='controls'>"
         "<button id='analyze-button' type='submit'>Analyser le texte</button>"
+        "<button id='demo-button' type='button'>Texte de demo</button>"
         "<label><input id='auto-analyze' type='checkbox' /> Analyse auto (0.8s)</label>"
         "</div>"
         "</form>"
@@ -441,9 +448,11 @@ def render_page(
         "const form=document.getElementById('analyze-form');"
         "const input=document.getElementById('input_text');"
         "const button=document.getElementById('analyze-button');"
+        "const demoButton=document.getElementById('demo-button');"
         "const auto=document.getElementById('auto-analyze');"
         "const msg=document.querySelector('.message');"
         "const results=document.getElementById('results-container');"
+        f"const demoText={demo_text_literal};"
         "let timer=null;"
         "let requestId=0;"
         "function setMessage(text){msg.textContent=text || '';}"
@@ -478,6 +487,14 @@ def render_page(
         "form.addEventListener('submit',function(event){"
         "event.preventDefault();"
         "runAnalysis();"
+        "});"
+        "demoButton.addEventListener('click',function(){"
+        "input.value=demoText;"
+        "setMessage('Texte de demo charge.');"
+        "if(auto.checked){"
+        "if(timer!==null){clearTimeout(timer);}"
+        "timer=setTimeout(runAnalysis,300);"
+        "}"
         "});"
         "input.addEventListener('input',function(){"
         "if(!auto.checked){return;}"
