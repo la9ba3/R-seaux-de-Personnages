@@ -2,9 +2,8 @@ FROM python:3.10-slim
 WORKDIR /app
 
 COPY requirements.txt .
-RUN RUN pip install --no-cache-dir -r requirements.txt && \
-    python -m spacy download fr_core_news_sm && \
-    python -m spacy download fr_core_news_lg
+RUN pip install --no-cache-dir -r requirements.txt && \
+    python -m spacy download fr_core_news_sm
 
 COPY . .
 EXPOSE 8000
