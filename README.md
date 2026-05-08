@@ -47,3 +47,21 @@ Pour generer les graphes PNG:
 ```
 
 Sortie: `outputs/figures/`
+
+Pour generer les graphes PNG par chapitre avec polarite:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/export_polarity_graph_figures.py
+```
+
+Sortie: `outputs/figures_polarity/`
+
+Pour generer un graphe global combine avec polarite:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/export_combined_polarity_graph.py
+```
+
+Sorties:
+- `outputs/figures_polarity/combined_polarity_graph.png`
+- `outputs/figures_polarity/combined_polarity_graph.graphml`
