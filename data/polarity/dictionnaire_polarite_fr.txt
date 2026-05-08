@@ -1,0 +1,77 @@
+# Polarites de relation inspirees de l'article et de la repo de reference.
+# Format: terme : score, avec score dans [-3, 3].
+
+aimer : 3
+adorer : 3
+apprecier : 3
+cherir : 3
+venerer : 3
+soutenir : 2
+encourager : 2
+aide : 2
+aider : 2
+secourir : 2
+defendre : 2
+reconforter : 2
+collaborer : 2
+cooperer : 2
+s'allier : 2
+alliance : 2
+ami : 2
+amie : 2
+amitie : 2
+respect : 1
+estimer : 1
+consideration : 1
+tolerer : 1
+paix : 1
+accord : 1
+
+ignorer : 0
+eviter : 0
+indifferent : 0
+neutre : 0
+
+critiquer : -1
+blamer : -1
+dominer : -1
+mefiance : -1
+se mefier : -1
+mepriser : -2
+mepris : -2
+denigrer : -2
+rabaisser : -2
+decevoir : -2
+condamner : -2
+combattre : -2
+affronter : -2
+defier : -2
+s'opposer : -2
+opposer : -2
+desarmer : -2
+reprover : -3
+detester : -3
+hair : -3
+execrer : -3
+trahir : -3
+trahison : -3
+nuire : -3
+saboter : -3
+blesser : -3
+humilier : -3
+detruire : -3
+rejeter : -3
+insulter : -3
+exclure : -3
+exploiter : -3
+attaquer : -3
+tromper : -3
+menacer : -3
+deshonorer : -3
+devaloriser : -2
+oppresser : -3
+guerre : -3
+conflit : -2
+ennemi : -3
+ennemie : -3
+hostilite : -3

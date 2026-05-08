@@ -10,6 +10,7 @@ from ner import (
 )
 from alias_resolution import resolve_aliases
 from interactions import extract_interactions_from_mentions
+from polarity import enrich_interactions_with_polarity, load_polarity_lexicon
 from graph_builder import build_graph
 from export import (
     graph_to_graphml_string,
@@ -108,6 +109,17 @@ def run_pipeline(input_path: str, config: dict, preloaded_model=None) -> dict:
         window_size=config["cooccurrence_window"],
         min_edge_weight=config.get("interaction_min_weight", 2),
     )
+
+    if config.get("polarity_enabled", True):
+        polarity_lexicon = load_polarity_lexicon(config["polarity_lexicon_path"])
+        interactions = enrich_interactions_with_polarity(
+            interactions,
+            resolved_mentions,
+            document["tokens"],
+            polarity_lexicon,
+            window_size=config["cooccurrence_window"],
+            context_window=config.get("polarity_context_window", 8),
+        )
 
     graph = build_graph(characters, interactions)
 

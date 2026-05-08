@@ -56,9 +56,19 @@ def draw_graph(graph: nx.Graph, title: str, output_path: Path) -> None:
 
     # Largeur des arêtes basée sur leur poids
     edge_widths = []
+    edge_colors = []
     for u, v, data in graph.edges(data=True):
         weight = data.get("weight", 1)
-        edge_widths.append(1.0 + 0.6 * weight)
+        polarity = data.get("polarity", 0)
+        if polarity > 0:
+            edge_colors.append("#2E8B57")
+            edge_widths.append(1.0 + 0.8 * abs(polarity))
+        elif polarity < 0:
+            edge_colors.append("#B22222")
+            edge_widths.append(1.0 + 0.8 * abs(polarity))
+        else:
+            edge_colors.append("#777777")
+            edge_widths.append(1.0 + 0.6 * weight)
 
     # Labels = nom canonique exporté dans "label"
     labels = {
@@ -78,6 +88,7 @@ def draw_graph(graph: nx.Graph, title: str, output_path: Path) -> None:
         pos,
         width=edge_widths,
         alpha=0.5,
+        edge_color=edge_colors,
     )
 
     nx.draw_networkx_labels(

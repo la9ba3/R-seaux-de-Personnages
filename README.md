@@ -25,6 +25,11 @@ Reglage des aretes:
 - `1` = mode permissif
 - `2` = mode strict
 
+Polarite des relations:
+- `src/config.py` -> `polarity_enabled`
+- lexique: `data/polarity/dictionnaire_polarite_fr.txt`
+- les aretes gardent leur `weight` de cooccurrence et gagnent `polarity`, `sentiment`, `polarity_width`
+
 ## Generation des sorties
 
 Pour generer le CSV de soumission:

@@ -12,10 +12,20 @@ def build_graph(characters: list[dict], interactions: list[dict]):
         )
 
     for interaction in interactions:
+        edge_attributes = {"weight": interaction["weight"]}
+        for attribute in (
+            "polarity",
+            "sentiment",
+            "polarity_width",
+            "polarity_evidence",
+        ):
+            if attribute in interaction:
+                edge_attributes[attribute] = interaction[attribute]
+
         graph.add_edge(
             interaction["source"],
             interaction["target"],
-            weight=interaction["weight"]
+            **edge_attributes,
         )
 
     return graph

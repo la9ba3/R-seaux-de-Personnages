@@ -1,6 +1,14 @@
 from pathlib import Path
 import os
 
+
+def _env_bool(name: str, default: bool = True) -> bool:
+    value = os.getenv(name)
+    if value is None:
+        return default
+    return value.strip().lower() in {"1", "true", "yes", "on"}
+
+
 def get_default_config() -> dict:
     """
     Retourne la configuration par defaut du projet.
@@ -39,6 +47,11 @@ def get_default_config() -> dict:
         # 1 = garder toutes les cooccurrences; 2 = regle stricte historique.
         "interaction_min_weight": 1,
 
+        # Polarite des relations
+        "polarity_enabled": _env_bool("POLARITY_ENABLED", True),
+        "polarity_lexicon_path": project_root / "data" / "polarity" / "dictionnaire_polarite_fr.txt",
+        "polarity_context_window": 8,
+
         # Export
         "submission_filename": "submission.csv",
     }
@@ -65,6 +78,9 @@ def validate_config(config: dict) -> None:
         "keep_singleton_sources",
         "cooccurrence_window",
         "interaction_min_weight",
+        "polarity_enabled",
+        "polarity_lexicon_path",
+        "polarity_context_window",
         "submission_filename",
     ]
 
@@ -80,6 +96,12 @@ def validate_config(config: dict) -> None:
 
     if not isinstance(config["interaction_min_weight"], int) or config["interaction_min_weight"] <= 0:
         raise ValueError("La cle 'interaction_min_weight' doit etre un entier strictement positif.")
+
+    if not isinstance(config["polarity_enabled"], bool):
+        raise ValueError("La cle 'polarity_enabled' doit etre un booleen.")
+
+    if not isinstance(config["polarity_context_window"], int) or config["polarity_context_window"] < 0:
+        raise ValueError("La cle 'polarity_context_window' doit etre un entier positif ou nul.")
 
     if not isinstance(config["keep_singleton_sources"], list):
         raise ValueError("La cle 'keep_singleton_sources' doit etre une liste.")
