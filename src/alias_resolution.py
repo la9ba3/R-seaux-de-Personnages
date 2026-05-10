@@ -1,9 +1,13 @@
 from __future__ import annotations
 
 import re
+import unicodedata
 
 
 TITLE_PATTERNS = [
+    r"^Le\s+",
+    r"^La\s+",
+    r"^L['’]\s*",
     r"^M\.\s+",
     r"^Mme\s+",
     r"^Mlle\s+",
@@ -15,8 +19,46 @@ TITLE_PATTERNS = [
     r"^Prof\s+",
     r"^Maitre\s+",
     r"^Maître\s+",
+    r"^Maitresse\s+",
+    r"^Maîtresse\s+",
     r"^M['’]dame\s+",
 ]
+
+KNOWN_ALIAS_TARGETS = {
+    "baley": "elijah baley",
+    "daneel": "r daneel olivaw",
+    "daneel olivaw": "r daneel olivaw",
+    "demerzel": "eto demerzel",
+    "dors": "dors venabili",
+    "enderby": "julius enderby",
+    "eto demerzel": "eto demerzel",
+    "lije baley": "elijah baley",
+    "maitresse venabili": "dors venabili",
+    "maîtresse venabili": "dors venabili",
+    "maître venabili": "dors venabili",
+    "r daneel": "r daneel olivaw",
+    "r daneel olivaw": "r daneel olivaw",
+}
+
+KNOWN_CANONICAL_DISPLAY = {
+    "elijah baley": "Elijah Baley",
+    "dors venabili": "Dors Venabili",
+    "eto demerzel": "Eto Demerzel",
+    "julius enderby": "Julius Enderby",
+    "r daneel olivaw": "R. Daneel Olivaw",
+}
+
+
+def fold_alias_key(text: str) -> str:
+    normalized = unicodedata.normalize("NFKD", text.lower().strip())
+    without_accents = "".join(
+        char for char in normalized if not unicodedata.combining(char)
+    )
+    without_accents = without_accents.replace("â€™", "'").replace("’", "'")
+    without_accents = re.sub(r"[^a-z0-9'\-\s]", " ", without_accents)
+    without_accents = re.sub(r"['\-]", " ", without_accents)
+    without_accents = re.sub(r"\s+", " ", without_accents)
+    return without_accents.strip()
 
 
 def strip_title(name: str) -> str:
@@ -49,18 +91,18 @@ def normalize_mention(mention: str) -> str:
     Normalise une mention pour faciliter le regroupement.
     """
     mention = strip_title(mention)
-    mention = mention.lower().strip()
-    mention = re.sub(r"[^\w\sà-öø-ÿ]", " ", mention)
-    mention = re.sub(r"\s+", " ", mention)
-    return mention.strip()
+    return fold_alias_key(mention)
 
 
-def choose_canonical_name(alias_group: list[str]) -> str:
+def choose_canonical_name(alias_group: list[str], normalized_key: str | None = None) -> str:
     """
     Choisit un canonical_name stable et lisible pour l'export.
     """
     if not alias_group:
         return ""
+
+    if normalized_key in KNOWN_CANONICAL_DISPLAY:
+        return KNOWN_CANONICAL_DISPLAY[normalized_key]
 
     def cleaned(alias: str) -> str:
         return strip_title(alias).strip()
@@ -115,6 +157,17 @@ def build_initial_groups(mentions: list[dict]) -> dict:
             continue
         groups.setdefault(normalized, []).append(mention)
     return groups
+
+
+def apply_known_alias_targets(groups: dict) -> dict:
+    """
+    Regroupe quelques alias fréquents du corpus vers une clé canonique connue.
+    """
+    merged = {}
+    for key, values in groups.items():
+        target = KNOWN_ALIAS_TARGETS.get(key, key)
+        merged.setdefault(target, []).extend(values)
+    return merged
 
 
 def merge_groups_by_last_name(groups: dict) -> dict:
@@ -339,26 +392,30 @@ def merge_groups_by_dominant_anchor(groups: dict) -> dict:
     return merged
 
 
-def resolve_aliases(mentions: list[dict]) -> dict:
+def resolve_aliases(mentions: list[dict], use_known_aliases: bool = False) -> dict:
     """
     Résolution d'alias en plusieurs étapes.
     """
     groups = build_initial_groups(mentions)
+    if use_known_aliases:
+        groups = apply_known_alias_targets(groups)
     groups = merge_groups_by_last_name(groups)
     groups = merge_groups_by_first_name(groups)
     groups = merge_groups_by_initial_prefix(groups)
     groups = merge_groups_by_similarity(groups)
+    if use_known_aliases:
+        groups = apply_known_alias_targets(groups)
 
     resolved_mentions = []
     characters = []
 
     character_count = 1
 
-    for _, mention_group in groups.items():
+    for normalized_key, mention_group in groups.items():
         character_id = f"char_{character_count:04d}"
 
         alias_texts = sorted({mention["text"] for mention in mention_group})
-        canonical_name = choose_canonical_name(alias_texts)
+        canonical_name = choose_canonical_name(alias_texts, normalized_key=normalized_key)
         mention_ids = [mention["mention_id"] for mention in mention_group]
 
         characters.append(

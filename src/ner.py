@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 import re
+import unicodedata
 
 import spacy
 
@@ -74,6 +75,72 @@ NARRATIVE_OR_DISCOURSE_WORDS = {
     "incertitude",
     "crois",
     "galopa",
+    "instantanement",
+    "instantanément",
+}
+
+NOISY_LEADING_WORDS = {
+    "alors",
+    "certes",
+    "enfin",
+    "instantanement",
+    "instantanément",
+    "mais",
+    "or",
+    "puis",
+    "soudain",
+}
+
+STRICT_REJECT_EXACT = {
+    "aurore",
+    "aurora",
+    "ciel",
+    "dieu du ciel",
+    "empereur",
+    "freres",
+    "frères",
+    "humanique",
+    "l empereur",
+    "le maire",
+    "le sacratorium",
+    "madame la maire",
+    "madame le maire",
+    "maire",
+    "maitre robot",
+    "maître robot",
+    "monsieur la maire",
+    "monsieur le maire",
+    "medievaliste",
+    "medievalistes",
+    "médiévaliste",
+    "médiévalistes",
+    "mycogene",
+    "mycogène",
+    "mycogenien",
+    "mycogeniens",
+    "mycogénien",
+    "mycogéniens",
+    "sacratorium",
+    "sacratorium aurora",
+    "sacratorium de mycogene",
+    "sacratorium de mycogène",
+    "sergent",
+    "spacien",
+    "spaciens",
+    "terrien",
+    "terriens",
+    "trantorien",
+    "trantoriens",
+}
+
+STRICT_REJECT_CONTAINS = {
+    "controverse",
+    "galactica",
+    "mycogene",
+    "mycogène",
+    "sacratorium",
+    "subdivisions",
+    "surprise de",
 }
 
 PRONOUN_OR_FUNCTION_TAILS = {
@@ -174,6 +241,26 @@ def _normalize_token(text: str) -> str:
     return normalized
 
 
+def _repair_mojibake(text: str) -> str:
+    try:
+        return text.encode("latin1").decode("utf-8")
+    except UnicodeError:
+        return text
+
+
+def _fold_for_rejection(text: str) -> str:
+    repaired = _repair_mojibake(text)
+    repaired = repaired.lower().replace("â€™", "'").replace("’", "'")
+    normalized = unicodedata.normalize("NFKD", repaired)
+    without_accents = "".join(
+        char for char in normalized if not unicodedata.combining(char)
+    )
+    without_accents = re.sub(r"[^a-z0-9'\-\s]", " ", without_accents)
+    without_accents = re.sub(r"['\-]", " ", without_accents)
+    without_accents = re.sub(r"\s+", " ", without_accents)
+    return without_accents.strip()
+
+
 def _normalize_name_part(text: str) -> str:
     cleaned = text.strip().replace("’", "'")
     cleaned = re.sub(r"^[^A-Za-zÀ-ÖØ-öø-ÿ]+", "", cleaned)
@@ -238,6 +325,15 @@ def clean_person_mention_text(text: str) -> str:
     cleaned = re.sub(r"\s+", " ", cleaned).strip()
 
     words = cleaned.split()
+    while len(words) > 1 and _normalize_token(words[0]) in NOISY_LEADING_WORDS:
+        candidate = " ".join(words[1:]).strip()
+        if starts_like_proper_name(candidate):
+            cleaned = candidate
+            words = cleaned.split()
+            continue
+        break
+
+    words = cleaned.split()
     while len(words) > 1:
         tail = _normalize_token(words[-1])
         if not tail:
@@ -249,6 +345,28 @@ def clean_person_mention_text(text: str) -> str:
         break
 
     return " ".join(words).strip()
+
+
+def is_strictly_rejected_mention(text: str) -> bool:
+    folded = _fold_for_rejection(text)
+    if not folded:
+        return True
+
+    if folded in STRICT_REJECT_EXACT:
+        return True
+
+    if any(fragment in folded for fragment in STRICT_REJECT_CONTAINS):
+        return True
+
+    words = folded.split()
+    if len(words) == 1:
+        word = words[0]
+        if word in STRICT_REJECT_EXACT:
+            return True
+        if word.endswith(("iens", "iennes", "istes")):
+            return True
+
+    return False
 
 
 def normalize_for_antidictionary(text: str) -> str:
@@ -519,7 +637,7 @@ def build_enriched_person_mentions(
     return deduplicate_mentions(spacy_mentions + rule_mentions + salvaged_mentions + list_mentions)
 
 
-def is_valid_person_mention(text: str) -> bool:
+def is_valid_person_mention(text: str, strict: bool = False) -> bool:
     """
     Vérifie si une mention ressemble à un nom de personne exploitable.
     """
@@ -538,6 +656,9 @@ def is_valid_person_mention(text: str) -> bool:
         return False
 
     if normalized in ANTI_DICTIONARY:
+        return False
+
+    if strict and is_strictly_rejected_mention(cleaned):
         return False
 
     if len(cleaned) < 2:
@@ -589,7 +710,7 @@ def is_valid_person_mention(text: str) -> bool:
     return True
 
 
-def filter_person_mentions(mentions: list[dict]) -> list[dict]:
+def filter_person_mentions(mentions: list[dict], strict: bool = False) -> list[dict]:
     """
     Filtre les mentions de personnes pour supprimer les faux positifs évidents.
     """
@@ -604,7 +725,7 @@ def filter_person_mentions(mentions: list[dict]) -> list[dict]:
         if normalized_text in CORPUS_BLACKLIST:
             continue
 
-        if not is_valid_person_mention(text):
+        if not is_valid_person_mention(text, strict=strict):
             continue
 
         filtered.append(

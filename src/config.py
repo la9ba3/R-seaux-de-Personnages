@@ -34,6 +34,9 @@ def get_default_config() -> dict:
         # NER
         #"ner_model": "fr_core_news_lg",
         "ner_model": os.getenv("NER_MODEL", "fr_core_news_lg"),
+        "strict_ner_filters": _env_bool("STRICT_NER_FILTERS", False),
+        "known_aliases_enabled": _env_bool("KNOWN_ALIASES_ENABLED", False),
+        "export_all_aliases": _env_bool("EXPORT_ALL_ALIASES", False),
         # Sources autorisees a survivre au filtre singleton.
         "keep_singleton_sources": [
             "rule_title",
@@ -75,6 +78,9 @@ def validate_config(config: dict) -> None:
         "books",
         "chapter_file_extension",
         "ner_model",
+        "strict_ner_filters",
+        "known_aliases_enabled",
+        "export_all_aliases",
         "keep_singleton_sources",
         "cooccurrence_window",
         "interaction_min_weight",
@@ -105,3 +111,7 @@ def validate_config(config: dict) -> None:
 
     if not isinstance(config["keep_singleton_sources"], list):
         raise ValueError("La cle 'keep_singleton_sources' doit etre une liste.")
+
+    for key in ("strict_ner_filters", "known_aliases_enabled", "export_all_aliases"):
+        if not isinstance(config[key], bool):
+            raise ValueError(f"La cle '{key}' doit etre un booleen.")

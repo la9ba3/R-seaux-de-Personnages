@@ -30,15 +30,38 @@ Polarite des relations:
 - lexique: `data/polarity/dictionnaire_polarite_fr.txt`
 - les aretes gardent leur `weight` de cooccurrence et gagnent `polarity`, `sentiment`, `polarity_width`
 
+## Pipeline de soumission
+
+Le pipeline complet est dans `src/main.py` et suit ces etapes:
+
+1. Lecture du chapitre `.txt.preprocessed`, nettoyage des espaces et construction du `doc_id` Kaggle (`lca0`, `paf0`, etc.).
+2. Extraction NER avec spaCy `fr_core_news_lg`.
+3. Ajout de mentions par regles: titres, roles, recuperation de noms dans les entites bruitees, listes de personnages.
+4. Nettoyage et filtrage des mentions. Les filtres stricts suppriment les faux personnages.
+5. Alignement des mentions sur les tokens du chapitre.
+6. Resolution des alias, avec fusion optionnelle d'alias connus pour les personnages recurrents.
+7. Suppression des personnages faibles avant construction des relations.
+8. Extraction des interactions par cooccurrence dans une fenetre de 25 tokens.
+9. Ajout optionnel de la polarite sur les aretes avec le lexique `data/polarity/dictionnaire_polarite_fr.txt`.
+10. Construction du graphe NetworkX, export GraphML, puis generation du CSV.
+
+Dernier score public obtenu avec `submission.csv`: `0.61871`.
+
+Les livrables de soutenance (article, presentation et soumission finale) sont fournis
+separement du depot de code afin de garder le projet propre.
+
+
+
 ## Generation des sorties
 
-Pour generer le CSV de soumission:
+Pour regenerer la soumission finale:
 
 ```powershell
-.\.venv\Scripts\python.exe scripts/run_all_chapters.py
+.\.venv\Scripts\python.exe scripts/generate_final_submission.py
 ```
 
 Sortie: `data/submissions/submission.csv`
+
 
 Pour generer les graphes PNG:
 

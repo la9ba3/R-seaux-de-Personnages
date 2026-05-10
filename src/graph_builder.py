@@ -1,14 +1,20 @@
 import networkx as nx
 
 
-def build_graph(characters: list[dict], interactions: list[dict]):
+def build_graph(
+    characters: list[dict],
+    interactions: list[dict],
+    export_aliases: bool = False,
+):
     graph = nx.Graph()
 
     for character in characters:
+        aliases = character.get("aliases") or [character["canonical_name"]]
+        names = ";".join(sorted(set(aliases))) if export_aliases else character["canonical_name"]
         graph.add_node(
             character["character_id"],
             label=character["canonical_name"],
-            names=character["canonical_name"]
+            names=names,
         )
 
     for interaction in interactions:

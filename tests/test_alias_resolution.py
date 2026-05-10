@@ -65,6 +65,18 @@ class AliasResolutionTests(unittest.TestCase):
         self.assertEqual(len(result["characters"][0]["mention_ids"]), 3)
         self.assertIn("R. Daneel Olivaw", result["characters"][0]["aliases"])
 
+    def test_known_aliases_merge_cross_chapter_like_short_forms(self) -> None:
+        mentions = [
+            {"mention_id": "m1", "text": "Daneel", "start_token": 0, "end_token": 0},
+            {"mention_id": "m2", "text": "Dors", "start_token": 10, "end_token": 10},
+            {"mention_id": "m3", "text": "Demerzel", "start_token": 20, "end_token": 20},
+        ]
+
+        result = resolve_aliases(mentions, use_known_aliases=True)
+        names = sorted(character["canonical_name"] for character in result["characters"])
+
+        self.assertEqual(names, ["Dors Venabili", "Eto Demerzel", "R. Daneel Olivaw"])
+
 
 if __name__ == "__main__":
     unittest.main()

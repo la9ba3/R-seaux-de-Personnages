@@ -24,6 +24,9 @@ class NerFiltersTests(unittest.TestCase):
     def test_clean_keeps_name_after_comma_prefix(self) -> None:
         self.assertEqual(clean_person_mention_text("Instantanement, Daneel"), "Daneel")
 
+    def test_clean_removes_noisy_leading_word(self) -> None:
+        self.assertEqual(clean_person_mention_text("Instantanement R. Daneel"), "R. Daneel")
+
     def test_rejects_narrative_like_mentions(self) -> None:
         self.assertFalse(is_valid_person_mention("Seldon grimaça"))
         self.assertFalse(is_valid_person_mention("Appelez-moi Davan"))
@@ -34,6 +37,12 @@ class NerFiltersTests(unittest.TestCase):
         self.assertTrue(is_valid_person_mention("Hari Seldon"))
         self.assertTrue(is_valid_person_mention("Docteur Venabili"))
         self.assertTrue(is_valid_person_mention("Dors"))
+
+    def test_strict_mode_rejects_known_non_characters(self) -> None:
+        self.assertFalse(is_valid_person_mention("Spaciens", strict=True))
+        self.assertFalse(is_valid_person_mention("Sacratorium de Mycogène", strict=True))
+        self.assertFalse(is_valid_person_mention("GALACTICA2 Étouffant", strict=True))
+        self.assertFalse(is_valid_person_mention("Madame le Maire", strict=True))
 
     def test_salvage_splits_noisy_spacy_entity(self) -> None:
         spacy_mentions = [

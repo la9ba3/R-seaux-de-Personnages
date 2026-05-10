@@ -11,6 +11,10 @@ venv/
 
 # Outputs
 outputs/
+dist/
+tmp/
+deliverables/
+paper/
 data/interim/
 data/processed/
 data/submissions/

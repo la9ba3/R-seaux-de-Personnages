@@ -86,14 +86,20 @@ def run_pipeline(input_path: str, config: dict, preloaded_model=None) -> dict:
         rule_mentions,
     )
 
-    mentions = filter_person_mentions(raw_mentions)
+    mentions = filter_person_mentions(
+        raw_mentions,
+        strict=config.get("strict_ner_filters", False),
+    )
     aligned_mentions = align_mentions_to_tokens(mentions, document["tokens"])
     mention_source_by_id = {
         mention["mention_id"]: mention.get("source", "unknown")
         for mention in aligned_mentions
     }
 
-    alias_result = resolve_aliases(aligned_mentions)
+    alias_result = resolve_aliases(
+        aligned_mentions,
+        use_known_aliases=config.get("known_aliases_enabled", False),
+    )
     resolved_mentions = alias_result["resolved_mentions"]
     characters = alias_result["characters"]
 
@@ -121,7 +127,11 @@ def run_pipeline(input_path: str, config: dict, preloaded_model=None) -> dict:
             context_window=config.get("polarity_context_window", 8),
         )
 
-    graph = build_graph(characters, interactions)
+    graph = build_graph(
+        characters,
+        interactions,
+        export_aliases=config.get("export_all_aliases", False),
+    )
 
     return {
         "doc_id": document["doc_id"],
