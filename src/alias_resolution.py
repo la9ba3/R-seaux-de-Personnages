@@ -32,18 +32,23 @@ KNOWN_ALIAS_TARGETS = {
     "dors": "dors venabili",
     "enderby": "julius enderby",
     "eto demerzel": "eto demerzel",
+    "hari": "hari seldon",
+    "harri seldon": "hari seldon",
+    "hari seldon": "hari seldon",
     "lije baley": "elijah baley",
     "maitresse venabili": "dors venabili",
     "maîtresse venabili": "dors venabili",
     "maître venabili": "dors venabili",
     "r daneel": "r daneel olivaw",
     "r daneel olivaw": "r daneel olivaw",
+    "seldon": "hari seldon",
 }
 
 KNOWN_CANONICAL_DISPLAY = {
     "elijah baley": "Elijah Baley",
     "dors venabili": "Dors Venabili",
     "eto demerzel": "Eto Demerzel",
+    "hari seldon": "Hari Seldon",
     "julius enderby": "Julius Enderby",
     "r daneel olivaw": "R. Daneel Olivaw",
 }

@@ -48,6 +48,7 @@ CORPUS_BLACKLIST = {
     "pourvu qu",
     "n avez qu",
     "s avise de l utiliser",
+    "SUBDIVISIONS IA-IE"
 }
 
 NARRATIVE_OR_DISCOURSE_WORDS = {

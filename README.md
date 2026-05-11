@@ -71,6 +71,9 @@ Pour generer les graphes PNG:
 
 Sortie: `outputs/figures/`
 
+Les scripts d'export de graphes utilisent la meme configuration que la
+soumission finale: filtres stricts, alias connus et export complet des alias.
+
 Pour generer les graphes PNG par chapitre avec polarite:
 
 ```powershell

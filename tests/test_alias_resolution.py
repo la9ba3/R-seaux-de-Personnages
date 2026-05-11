@@ -70,12 +70,17 @@ class AliasResolutionTests(unittest.TestCase):
             {"mention_id": "m1", "text": "Daneel", "start_token": 0, "end_token": 0},
             {"mention_id": "m2", "text": "Dors", "start_token": 10, "end_token": 10},
             {"mention_id": "m3", "text": "Demerzel", "start_token": 20, "end_token": 20},
+            {"mention_id": "m4", "text": "Seldon", "start_token": 30, "end_token": 30},
+            {"mention_id": "m5", "text": "Harri Seldon", "start_token": 40, "end_token": 41},
         ]
 
         result = resolve_aliases(mentions, use_known_aliases=True)
         names = sorted(character["canonical_name"] for character in result["characters"])
 
-        self.assertEqual(names, ["Dors Venabili", "Eto Demerzel", "R. Daneel Olivaw"])
+        self.assertEqual(
+            names,
+            ["Dors Venabili", "Eto Demerzel", "Hari Seldon", "R. Daneel Olivaw"],
+        )
 
 
 if __name__ == "__main__":

@@ -9,7 +9,7 @@ SCRIPTS_DIR = PROJECT_ROOT / "scripts"
 sys.path.append(str(SRC_DIR))
 sys.path.append(str(SCRIPTS_DIR))
 
-from config import get_default_config, validate_config
+from config import validate_config
 from export_graph_figures import (
     build_figure_path,
     draw_graph,
@@ -17,6 +17,7 @@ from export_graph_figures import (
     iter_chapter_files,
     simplify_graph_for_visualization,
 )
+from generate_final_submission import build_final_submission_config
 from main import run_pipeline
 from ner import load_ner_model
 
@@ -36,7 +37,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
-    config = get_default_config()
+    config = build_final_submission_config()
     config["polarity_enabled"] = True
     validate_config(config)
 

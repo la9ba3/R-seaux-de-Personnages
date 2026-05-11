@@ -7,9 +7,12 @@ import networkx as nx
 # Permet d'importer les modules du dossier src/
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 SRC_DIR = PROJECT_ROOT / "src"
+SCRIPTS_DIR = PROJECT_ROOT / "scripts"
 sys.path.append(str(SRC_DIR))
+sys.path.append(str(SCRIPTS_DIR))
 
-from config import get_default_config, validate_config
+from config import validate_config
+from generate_final_submission import build_final_submission_config
 from main import run_pipeline
 from ner import load_ner_model
 
@@ -121,7 +124,7 @@ def iter_chapter_files(raw_dir: Path, books: list[str], extension: str):
 
 
 def main() -> None:
-    config = get_default_config()
+    config = build_final_submission_config()
     validate_config(config)
 
     raw_dir = Path(config["data_raw_dir"])

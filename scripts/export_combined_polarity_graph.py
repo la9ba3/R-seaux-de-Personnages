@@ -15,8 +15,14 @@ SCRIPTS_DIR = PROJECT_ROOT / "scripts"
 sys.path.append(str(SRC_DIR))
 sys.path.append(str(SCRIPTS_DIR))
 
-from config import get_default_config, validate_config
+from alias_resolution import (
+    KNOWN_ALIAS_TARGETS,
+    KNOWN_CANONICAL_DISPLAY,
+    normalize_mention,
+)
+from config import validate_config
 from export_graph_figures import ensure_dir, iter_chapter_files
+from generate_final_submission import build_final_submission_config
 from main import run_pipeline
 from ner import load_ner_model
 from polarity import sentiment_label
@@ -49,33 +55,112 @@ def _node_label(graph: nx.Graph, node_id: str) -> str:
     return graph.nodes[node_id].get("label", node_id)
 
 
+def _split_aliases(value: str) -> set[str]:
+    return {alias.strip() for alias in value.split(";") if alias.strip()}
+
+
+def _global_alias_key(label: str, names: str) -> str:
+    aliases = {label}
+    aliases.update(_split_aliases(names))
+
+    keys = []
+    for alias in aliases:
+        key = normalize_mention(alias)
+        if key:
+            keys.append(KNOWN_ALIAS_TARGETS.get(key, key))
+
+    known_keys = [key for key in keys if key in KNOWN_CANONICAL_DISPLAY]
+    if known_keys:
+        return sorted(
+            set(known_keys),
+            key=lambda key: (-len(key.split()), -len(key), key),
+        )[0]
+
+    return sorted(
+        set(keys),
+        key=lambda key: (-len(key.split()), -len(key), key),
+    )[0] if keys else normalize_mention(label)
+
+
+def _display_label(alias_key: str, fallback_label: str) -> str:
+    if alias_key in KNOWN_CANONICAL_DISPLAY:
+        return KNOWN_CANONICAL_DISPLAY[alias_key]
+    return fallback_label
+
+
+def _register_alias_indexes(combined_graph: nx.Graph, alias_key: str, global_label: str) -> None:
+    alias_index = combined_graph.graph.setdefault("alias_key_to_label", {})
+    last_name_index = combined_graph.graph.setdefault("last_name_to_label", {})
+
+    alias_index[alias_key] = global_label
+
+    words = alias_key.split()
+    if len(words) < 2:
+        return
+
+    last_name = words[-1]
+    if last_name not in last_name_index:
+        last_name_index[last_name] = global_label
+    elif last_name_index[last_name] != global_label:
+        last_name_index[last_name] = ""
+
+
+def _resolve_global_label(combined_graph: nx.Graph, alias_key: str, fallback_label: str) -> str:
+    alias_index = combined_graph.graph.setdefault("alias_key_to_label", {})
+    last_name_index = combined_graph.graph.setdefault("last_name_to_label", {})
+
+    if alias_key in alias_index:
+        return alias_index[alias_key]
+
+    if len(alias_key.split()) == 1:
+        global_label = last_name_index.get(alias_key)
+        if global_label:
+            alias_index[alias_key] = global_label
+            return global_label
+
+    return _display_label(alias_key, fallback_label)
+
+
 def add_chapter_graph(combined_graph: nx.Graph, chapter_graph: nx.Graph, doc_id: str) -> None:
     """
     Ajoute un graphe de chapitre au graphe global.
-    Les personnages sont fusionnes par nom canonique.
+    Les personnages sont fusionnes par alias normalise globalement.
     """
-    for _, data in chapter_graph.nodes(data=True):
+    node_to_global_label = {}
+
+    for node_id, data in chapter_graph.nodes(data=True):
         label = data.get("label")
         if not label:
             continue
+        names = data.get("names", label)
+        alias_key = _global_alias_key(label, names)
+        global_label = _resolve_global_label(combined_graph, alias_key, label)
+        node_to_global_label[node_id] = global_label
 
-        if not combined_graph.has_node(label):
+        if not combined_graph.has_node(global_label):
             combined_graph.add_node(
-                label,
-                label=label,
-                names=label,
+                global_label,
+                alias_key=alias_key,
+                label=global_label,
+                names="",
                 chapters_count=0,
                 chapters="",
             )
+        _register_alias_indexes(combined_graph, alias_key, global_label)
 
-        chapters = set(filter(None, combined_graph.nodes[label].get("chapters", "").split(",")))
+        node_aliases = _split_aliases(combined_graph.nodes[global_label].get("names", ""))
+        node_aliases.add(label)
+        node_aliases.update(_split_aliases(names))
+        combined_graph.nodes[global_label]["names"] = ";".join(sorted(node_aliases))
+
+        chapters = set(filter(None, combined_graph.nodes[global_label].get("chapters", "").split(",")))
         chapters.add(doc_id)
-        combined_graph.nodes[label]["chapters"] = ",".join(sorted(chapters))
-        combined_graph.nodes[label]["chapters_count"] = len(chapters)
+        combined_graph.nodes[global_label]["chapters"] = ",".join(sorted(chapters))
+        combined_graph.nodes[global_label]["chapters_count"] = len(chapters)
 
     for source, target, data in chapter_graph.edges(data=True):
-        source_label = _node_label(chapter_graph, source)
-        target_label = _node_label(chapter_graph, target)
+        source_label = node_to_global_label.get(source, _node_label(chapter_graph, source))
+        target_label = node_to_global_label.get(target, _node_label(chapter_graph, target))
         if source_label == target_label:
             continue
 
@@ -119,6 +204,11 @@ def simplify_combined_graph(graph: nx.Graph, min_degree: int = 1) -> nx.Graph:
         return graph.copy()
     nodes_to_keep = [node for node, degree in graph.degree() if degree >= min_degree]
     return graph.subgraph(nodes_to_keep).copy()
+
+
+def remove_internal_indexes(graph: nx.Graph) -> None:
+    graph.graph.pop("alias_key_to_label", None)
+    graph.graph.pop("last_name_to_label", None)
 
 
 def draw_combined_graph(graph: nx.Graph, output_path: Path) -> None:
@@ -178,7 +268,7 @@ def draw_combined_graph(graph: nx.Graph, output_path: Path) -> None:
 
 def main() -> None:
     args = parse_args()
-    config = get_default_config()
+    config = build_final_submission_config()
     config["polarity_enabled"] = True
     validate_config(config)
 
@@ -224,6 +314,7 @@ def main() -> None:
 
     graph_for_plot = simplify_combined_graph(combined_graph, min_degree=args.min_degree)
     draw_combined_graph(graph_for_plot, output_png)
+    remove_internal_indexes(combined_graph)
     nx.write_graphml(combined_graph, output_graphml, encoding="utf-8", prettyprint=True)
 
     print("\n=== Termine ===")
