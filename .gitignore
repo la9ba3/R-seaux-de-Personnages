@@ -10,7 +10,7 @@ venv/
 .ipynb_checkpoints/
 
 # Outputs
-outputs/
+outputs/figures
 dist/
 tmp/
 deliverables/

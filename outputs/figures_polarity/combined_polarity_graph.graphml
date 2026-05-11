@@ -1,0 +1,2200 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d12" for="edge" attr.name="chapters_count" attr.type="long" />
+  <key id="d11" for="edge" attr.name="chapters" attr.type="string" />
+  <key id="d10" for="edge" attr.name="polarity_evidence" attr.type="string" />
+  <key id="d9" for="edge" attr.name="polarity_width" attr.type="long" />
+  <key id="d8" for="edge" attr.name="sentiment" attr.type="string" />
+  <key id="d7" for="edge" attr.name="polarity" attr.type="long" />
+  <key id="d6" for="edge" attr.name="polarity_total" attr.type="long" />
+  <key id="d5" for="edge" attr.name="weight" attr.type="long" />
+  <key id="d4" for="node" attr.name="chapters" attr.type="string" />
+  <key id="d3" for="node" attr.name="chapters_count" attr.type="long" />
+  <key id="d2" for="node" attr.name="names" attr.type="string" />
+  <key id="d1" for="node" attr.name="label" attr.type="string" />
+  <key id="d0" for="node" attr.name="alias_key" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="R. Sammy">
+      <data key="d0">r sammy</data>
+      <data key="d1">R. Sammy</data>
+      <data key="d2">R. Sammy</data>
+      <data key="d3">9</data>
+      <data key="d4">lca0,lca1,lca11,lca12,lca14,lca15,lca16,lca17,lca6</data>
+    </node>
+    <node id="Vince Barrett">
+      <data key="d0">vince barrett</data>
+      <data key="d1">Vince Barrett</data>
+      <data key="d2">Barrett;Vince;Vince Barrett</data>
+      <data key="d3">3</data>
+      <data key="d4">lca0,lca12,lca15</data>
+    </node>
+    <node id="Elijah Baley">
+      <data key="d0">elijah baley</data>
+      <data key="d1">Elijah Baley</data>
+      <data key="d2">Baley;Elijah;Elijah Baley;Lije Baley;Monsieur Baley</data>
+      <data key="d3">18</data>
+      <data key="d4">lca0,lca1,lca10,lca11,lca12,lca13,lca14,lca15,lca16,lca17,lca2,lca3,lca4,lca5,lca6,lca7,lca8,lca9</data>
+    </node>
+    <node id="Julius Enderby">
+      <data key="d0">julius enderby</data>
+      <data key="d1">Julius Enderby</data>
+      <data key="d2">Enderby;JULIUS ENDERBY;Julius;Julius Enderby</data>
+      <data key="d3">13</data>
+      <data key="d4">lca0,lca1,lca11,lca12,lca15,lca16,lca17,lca3,lca4,lca5,lca6,lca7,lca9</data>
+    </node>
+    <node id="Roj Nemennuh Sarton">
+      <data key="d0">roj nemennuh sarton</data>
+      <data key="d1">Roj Nemennuh Sarton</data>
+      <data key="d2">Dr Sarton;Le Dr Sarton;Roj Nemennuh Sarton;Sarton</data>
+      <data key="d3">8</data>
+      <data key="d4">lca0,lca12,lca16,lca17,lca4,lca6,lca7,lca9</data>
+    </node>
+    <node id="Pierre">
+      <data key="d0">pierre</data>
+      <data key="d1">Pierre</data>
+      <data key="d2">Pierre</data>
+      <data key="d3">1</data>
+      <data key="d4">lca0</data>
+    </node>
+    <node id="Jacques">
+      <data key="d0">jacques</data>
+      <data key="d1">Jacques</data>
+      <data key="d2">Jacques</data>
+      <data key="d3">1</data>
+      <data key="d4">lca0</data>
+    </node>
+    <node id="R. Daneel Olivaw">
+      <data key="d0">r daneel olivaw</data>
+      <data key="d1">R. Daneel Olivaw</data>
+      <data key="d2">Daneel;Daneel Olivaw;Olivaw;R. Daneel;R. Daneel Olivaw</data>
+      <data key="d3">18</data>
+      <data key="d4">lca1,lca10,lca11,lca12,lca13,lca14,lca15,lca16,lca17,lca2,lca3,lca4,lca5,lca6,lca7,lca8,lca9,paf18</data>
+    </node>
+    <node id="Fastolfe">
+      <data key="d0">fastolfe</data>
+      <data key="d1">Fastolfe</data>
+      <data key="d2">Dr Fastolfe;Dr Han Fastolfe;Fastolfe</data>
+      <data key="d3">9</data>
+      <data key="d4">lca12,lca14,lca15,lca16,lca17,lca6,lca7,lca8,lca9</data>
+    </node>
+    <node id="Ben">
+      <data key="d0">ben</data>
+      <data key="d1">Ben</data>
+      <data key="d2">Ben</data>
+      <data key="d3">1</data>
+      <data key="d4">lca10</data>
+    </node>
+    <node id="A. Gerrigel">
+      <data key="d0">a gerrigel</data>
+      <data key="d1">A. Gerrigel</data>
+      <data key="d2">A. Gerrigel;Docteur Gerrigel;Dr Gerrigel;Gerrigel</data>
+      <data key="d3">4</data>
+      <data key="d4">lca11,lca12,lca15,lca17</data>
+    </node>
+    <node id="Francis Clousarr">
+      <data key="d0">francis clousarr</data>
+      <data key="d1">Francis Clousarr</data>
+      <data key="d2">Clousarr;Francis Clousarr</data>
+      <data key="d3">4</data>
+      <data key="d4">lca11,lca13,lca14,lca16</data>
+    </node>
+    <node id="Paul Gerhard">
+      <data key="d0">paul gerhard</data>
+      <data key="d1">Paul Gerhard</data>
+      <data key="d2">Paul Gerhard</data>
+      <data key="d3">1</data>
+      <data key="d4">lca11</data>
+    </node>
+    <node id="Norris">
+      <data key="d0">norris</data>
+      <data key="d1">Norris</data>
+      <data key="d2">Norris</data>
+      <data key="d3">1</data>
+      <data key="d4">lca12</data>
+    </node>
+    <node id="Jessie">
+      <data key="d0">jessie</data>
+      <data key="d1">Jessie</data>
+      <data key="d2">Jessie</data>
+      <data key="d3">3</data>
+      <data key="d4">lca13,lca3,lca5</data>
+    </node>
+    <node id="Jane Myers">
+      <data key="d0">jane myers</data>
+      <data key="d1">Jane Myers</data>
+      <data key="d2">Jane Myers</data>
+      <data key="d3">1</data>
+      <data key="d4">lca13</data>
+    </node>
+    <node id="Elisabeth">
+      <data key="d0">elisabeth</data>
+      <data key="d1">Elisabeth</data>
+      <data key="d2">Elisabeth</data>
+      <data key="d3">1</data>
+      <data key="d4">lca13</data>
+    </node>
+    <node id="Joseph Klemin">
+      <data key="d0">joseph klemin</data>
+      <data key="d1">Joseph Klemin</data>
+      <data key="d2">Joseph Klemin;Klemin</data>
+      <data key="d3">1</data>
+      <data key="d4">lca13</data>
+    </node>
+    <node id="Jézabel">
+      <data key="d0">jezabel</data>
+      <data key="d1">Jézabel</data>
+      <data key="d2">Jézabel</data>
+      <data key="d3">1</data>
+      <data key="d4">lca3</data>
+    </node>
+    <node id="Elie">
+      <data key="d0">elie</data>
+      <data key="d1">Elie</data>
+      <data key="d2">Elie</data>
+      <data key="d3">1</data>
+      <data key="d4">lca3</data>
+    </node>
+    <node id="Ahab">
+      <data key="d0">ahab</data>
+      <data key="d1">Ahab</data>
+      <data key="d2">Ahab</data>
+      <data key="d3">1</data>
+      <data key="d4">lca3</data>
+    </node>
+    <node id="Jéhu">
+      <data key="d0">jehu</data>
+      <data key="d1">Jéhu</data>
+      <data key="d2">Jéhu</data>
+      <data key="d3">1</data>
+      <data key="d4">lca3</data>
+    </node>
+    <node id="Naboth">
+      <data key="d0">naboth</data>
+      <data key="d1">Naboth</data>
+      <data key="d2">Naboth</data>
+      <data key="d3">1</data>
+      <data key="d4">lca3</data>
+    </node>
+    <node id="Bentley Baley">
+      <data key="d0">bentley baley</data>
+      <data key="d1">Bentley Baley</data>
+      <data key="d2">Bentley;Bentley Baley</data>
+      <data key="d3">1</data>
+      <data key="d4">lca3</data>
+    </node>
+    <node id="Hari Seldon">
+      <data key="d0">hari seldon</data>
+      <data key="d1">Hari Seldon</data>
+      <data key="d2">HARI;Hari;Hari Seldon;Maître Seldon;Seldon</data>
+      <data key="d3">19</data>
+      <data key="d4">paf0,paf1,paf10,paf11,paf12,paf13,paf14,paf15,paf16,paf17,paf18,paf2,paf3,paf4,paf5,paf6,paf7,paf8,paf9</data>
+    </node>
+    <node id="Cléon">
+      <data key="d0">cleon</data>
+      <data key="d1">Cléon</data>
+      <data key="d2">Cléon</data>
+      <data key="d3">3</data>
+      <data key="d4">paf0,paf12,paf3</data>
+    </node>
+    <node id="Eto Demerzel">
+      <data key="d0">eto demerzel</data>
+      <data key="d1">Eto Demerzel</data>
+      <data key="d2">Demerzel;Eto Demerzel</data>
+      <data key="d3">7</data>
+      <data key="d4">paf0,paf1,paf11,paf12,paf17,paf3,paf6</data>
+    </node>
+    <node id="Sire">
+      <data key="d0">sire</data>
+      <data key="d1">Sire</data>
+      <data key="d2">Sire</data>
+      <data key="d3">3</data>
+      <data key="d4">paf0,paf12,paf3</data>
+    </node>
+    <node id="Alban Wellis">
+      <data key="d0">alban wellis</data>
+      <data key="d1">Alban Wellis</data>
+      <data key="d2">Alban Wellis;Wellis</data>
+      <data key="d3">1</data>
+      <data key="d4">paf0</data>
+    </node>
+    <node id="Hummin">
+      <data key="d0">hummin</data>
+      <data key="d1">Hummin</data>
+      <data key="d2">Hummin;Maître Hummin</data>
+      <data key="d3">9</data>
+      <data key="d4">paf0,paf1,paf11,paf12,paf13,paf15,paf18,paf4,paf6</data>
+    </node>
+    <node id="Dors Venabili">
+      <data key="d0">dors venabili</data>
+      <data key="d1">Dors Venabili</data>
+      <data key="d2">Docteur Venabili;Dors;Dors Venabili;Maîtresse Venabili;Venabili</data>
+      <data key="d3">16</data>
+      <data key="d4">paf10,paf11,paf12,paf13,paf14,paf15,paf16,paf17,paf18,paf3,paf4,paf5,paf6,paf7,paf8,paf9</data>
+    </node>
+    <node id="Goutte-de-Pluie Quarante-cinq">
+      <data key="d0">goutte de pluie quarante cinq</data>
+      <data key="d1">Goutte-de-Pluie Quarante-cinq</data>
+      <data key="d2">Goutte-de-Pluie Quarante-cinq</data>
+      <data key="d3">1</data>
+      <data key="d4">paf9</data>
+    </node>
+    <node id="Mycélium Soixante-douze">
+      <data key="d0">mycelium soixante douze</data>
+      <data key="d1">Mycélium Soixante-douze</data>
+      <data key="d2">Mycélium;Mycélium Soixante-douze</data>
+      <data key="d3">2</data>
+      <data key="d4">paf10,paf11</data>
+    </node>
+    <node id="Maître-du-Soleil Quatorze">
+      <data key="d0">maitre du soleil quatorze</data>
+      <data key="d1">Maître-du-Soleil Quatorze</data>
+      <data key="d2">Maître-du-Soleil Quatorze</data>
+      <data key="d3">3</data>
+      <data key="d4">paf11,paf18,paf8</data>
+    </node>
+    <node id="Chetter">
+      <data key="d0">chetter</data>
+      <data key="d1">Chetter</data>
+      <data key="d2">Chetter</data>
+      <data key="d3">1</data>
+      <data key="d4">paf11</data>
+    </node>
+    <node id="Dahl">
+      <data key="d0">dahl</data>
+      <data key="d1">Dahl</data>
+      <data key="d2">Dahl</data>
+      <data key="d3">4</data>
+      <data key="d4">paf12,paf14,paf15,paf16</data>
+    </node>
+    <node id="Kan">
+      <data key="d0">kan</data>
+      <data key="d1">Kan</data>
+      <data key="d2">Kan</data>
+      <data key="d3">6</data>
+      <data key="d4">paf12,paf15,paf16,paf17,paf3,paf6</data>
+    </node>
+    <node id="Tisalver">
+      <data key="d0">tisalver</data>
+      <data key="d1">Tisalver</data>
+      <data key="d2">Maître Tisalver;Maîtresse Tisalver;Tisalver</data>
+      <data key="d3">4</data>
+      <data key="d4">paf12,paf13,paf14,paf15</data>
+    </node>
+    <node id="Casilia">
+      <data key="d0">casilia</data>
+      <data key="d1">Casilia</data>
+      <data key="d2">Casilia</data>
+      <data key="d3">2</data>
+      <data key="d4">paf12,paf13</data>
+    </node>
+    <node id="Hano Lindor">
+      <data key="d0">hano lindor</data>
+      <data key="d1">Hano Lindor</data>
+      <data key="d2">Hano Lindor;Lindor</data>
+      <data key="d3">1</data>
+      <data key="d4">paf12</data>
+    </node>
+    <node id="Amaryl">
+      <data key="d0">amaryl</data>
+      <data key="d1">Amaryl</data>
+      <data key="d2">Amaryl</data>
+      <data key="d3">1</data>
+      <data key="d4">paf12</data>
+    </node>
+    <node id="Anat Bigell">
+      <data key="d0">anat bigell</data>
+      <data key="d1">Anat Bigell</data>
+      <data key="d2">Anat Bigell</data>
+      <data key="d3">1</data>
+      <data key="d4">paf12</data>
+    </node>
+    <node id="Soupir de Seldon">
+      <data key="d0">soupir de seldon</data>
+      <data key="d1">Soupir de Seldon</data>
+      <data key="d2">Soupir de Seldon</data>
+      <data key="d3">1</data>
+      <data key="d4">paf12</data>
+    </node>
+    <node id="Mère Rittah">
+      <data key="d0">mere rittah</data>
+      <data key="d1">Mère Rittah</data>
+      <data key="d2">Mère;Mère Rittah</data>
+      <data key="d3">3</data>
+      <data key="d4">paf12,paf13,paf18</data>
+    </node>
+    <node id="Yugo Amaryl">
+      <data key="d0">yugo amaryl</data>
+      <data key="d1">Yugo Amaryl</data>
+      <data key="d2">Amaryl;Yugo Amaryl</data>
+      <data key="d3">4</data>
+      <data key="d4">paf13,paf14,paf16,paf18</data>
+    </node>
+    <node id="Raych">
+      <data key="d0">raych</data>
+      <data key="d1">Raych</data>
+      <data key="d2">Raych</data>
+      <data key="d3">5</data>
+      <data key="d4">paf13,paf14,paf15,paf16,paf17</data>
+    </node>
+    <node id="Ba-Lee">
+      <data key="d0">ba lee</data>
+      <data key="d1">Ba-Lee</data>
+      <data key="d2">Ba-Lee</data>
+      <data key="d3">1</data>
+      <data key="d4">paf13</data>
+    </node>
+    <node id="Marron">
+      <data key="d0">marron</data>
+      <data key="d1">Marron</data>
+      <data key="d2">Marron</data>
+      <data key="d3">2</data>
+      <data key="d4">paf13,paf15</data>
+    </node>
+    <node id="Davan">
+      <data key="d0">davan</data>
+      <data key="d1">Davan</data>
+      <data key="d2">Davan;Maître Davan</data>
+      <data key="d3">2</data>
+      <data key="d4">paf14,paf15</data>
+    </node>
+    <node id="Marlo Tanto">
+      <data key="d0">marlo tanto</data>
+      <data key="d1">Marlo Tanto</data>
+      <data key="d2">Marlo Tanto</data>
+      <data key="d3">1</data>
+      <data key="d4">paf14</data>
+    </node>
+    <node id="Lanel Russ">
+      <data key="d0">lanel russ</data>
+      <data key="d1">Lanel Russ</data>
+      <data key="d2">Lanel Russ;Russ</data>
+      <data key="d3">1</data>
+      <data key="d4">paf15</data>
+    </node>
+    <node id="Dors Venabili de Cinna">
+      <data key="d0">dors venabili de cinna</data>
+      <data key="d1">Dors Venabili de Cinna</data>
+      <data key="d2">Dors Venabili de Cinna</data>
+      <data key="d3">1</data>
+      <data key="d4">paf15</data>
+    </node>
+    <node id="Astinwald">
+      <data key="d0">astinwald</data>
+      <data key="d1">Astinwald</data>
+      <data key="d2">Astinwald</data>
+      <data key="d3">1</data>
+      <data key="d4">paf15</data>
+    </node>
+    <node id="Mannix IV">
+      <data key="d0">mannix iv</data>
+      <data key="d1">Mannix IV</data>
+      <data key="d2">Mannix;Mannix IV</data>
+      <data key="d3">2</data>
+      <data key="d4">paf16,paf17</data>
+    </node>
+    <node id="Emmer Thalus">
+      <data key="d0">emmer thalus</data>
+      <data key="d1">Emmer Thalus</data>
+      <data key="d2">Emmer Thalus;Thalus</data>
+      <data key="d3">1</data>
+      <data key="d4">paf16</data>
+    </node>
+    <node id="Chetter Hummin">
+      <data key="d0">chetter hummin</data>
+      <data key="d1">Chetter Hummin</data>
+      <data key="d2">Chetter;Chetter Hummin;Hummin</data>
+      <data key="d3">6</data>
+      <data key="d4">paf16,paf17,paf2,paf3,paf7,paf8</data>
+    </node>
+    <node id="Rachelle">
+      <data key="d0">rachelle</data>
+      <data key="d1">Rachelle</data>
+      <data key="d2">Rachelle</data>
+      <data key="d3">1</data>
+      <data key="d4">paf16</data>
+    </node>
+    <node id="Rachelle Ire">
+      <data key="d0">rachelle ire</data>
+      <data key="d1">Rachelle Ire</data>
+      <data key="d2">Rachelle;Rachelle Ire</data>
+      <data key="d3">1</data>
+      <data key="d4">paf17</data>
+    </node>
+    <node id="Raych Seldon">
+      <data key="d0">raych seldon</data>
+      <data key="d1">Raych Seldon</data>
+      <data key="d2">Raych;Raych Seldon</data>
+      <data key="d3">1</data>
+      <data key="d4">paf18</data>
+    </node>
+    <node id="Mannix">
+      <data key="d0">mannix iv de kan</data>
+      <data key="d1">Mannix</data>
+      <data key="d2">Mannix;Mannix IV de Kan</data>
+      <data key="d3">1</data>
+      <data key="d4">paf18</data>
+    </node>
+    <node id="Cléon Ier">
+      <data key="d0">cleon ier</data>
+      <data key="d1">Cléon Ier</data>
+      <data key="d2">Cléon Ier</data>
+      <data key="d3">1</data>
+      <data key="d4">paf1</data>
+    </node>
+    <node id="Alem">
+      <data key="d0">alem</data>
+      <data key="d1">Alem</data>
+      <data key="d2">Alem</data>
+      <data key="d3">1</data>
+      <data key="d4">paf1</data>
+    </node>
+    <node id="Lisung Randa">
+      <data key="d0">lisung randa</data>
+      <data key="d1">Lisung Randa</data>
+      <data key="d2">Lisung;Lisung Randa;Randa</data>
+      <data key="d3">2</data>
+      <data key="d4">paf4,paf6</data>
+    </node>
+    <node id="Kiangtow Randa">
+      <data key="d0">kiangtow randa</data>
+      <data key="d1">Kiangtow Randa</data>
+      <data key="d2">Kiangtow Randa</data>
+      <data key="d3">1</data>
+      <data key="d4">paf4</data>
+    </node>
+    <node id="Leggen">
+      <data key="d0">leggen</data>
+      <data key="d1">Leggen</data>
+      <data key="d2">Leggen</data>
+      <data key="d3">2</data>
+      <data key="d4">paf4,paf6</data>
+    </node>
+    <node id="Clowzia">
+      <data key="d0">clowzia</data>
+      <data key="d1">Clowzia</data>
+      <data key="d2">Clowzia</data>
+      <data key="d3">2</data>
+      <data key="d4">paf4,paf5</data>
+    </node>
+    <node id="Perplexité de Benastra">
+      <data key="d0">perplexite de benastra</data>
+      <data key="d1">Perplexité de Benastra</data>
+      <data key="d2">Benastra;Perplexité de Benastra</data>
+      <data key="d3">1</data>
+      <data key="d4">paf5</data>
+    </node>
+    <node id="Jenarr Leggen">
+      <data key="d0">jenarr leggen</data>
+      <data key="d1">Jenarr Leggen</data>
+      <data key="d2">Jenarr;Jenarr Leggen;Leggen</data>
+      <data key="d3">1</data>
+      <data key="d4">paf5</data>
+    </node>
+    <node id="Damiano Nord">
+      <data key="d0">damiano nord</data>
+      <data key="d1">Damiano Nord</data>
+      <data key="d2">Damiano;Damiano Nord</data>
+      <data key="d3">1</data>
+      <data key="d4">paf6</data>
+    </node>
+    <node id="Endor Levanian">
+      <data key="d0">endor levanian</data>
+      <data key="d1">Endor Levanian</data>
+      <data key="d2">Endor Levanian;Levanian</data>
+      <data key="d3">1</data>
+      <data key="d4">paf7</data>
+    </node>
+    <node id="Maître-du- Soleil">
+      <data key="d0">maitre du soleil</data>
+      <data key="d1">Maître-du- Soleil</data>
+      <data key="d2">Maître-du- Soleil</data>
+      <data key="d3">1</data>
+      <data key="d4">paf7</data>
+    </node>
+    <node id="Grisnuage">
+      <data key="d0">grisnuage</data>
+      <data key="d1">Grisnuage</data>
+      <data key="d2">Grisnuage</data>
+      <data key="d3">1</data>
+      <data key="d4">paf7</data>
+    </node>
+    <node id="Goutte-de-Pluie Quarante">
+      <data key="d0">goutte de pluie quarante</data>
+      <data key="d1">Goutte-de-Pluie Quarante</data>
+      <data key="d2">Goutte-de-Pluie Quarante;Quarante</data>
+      <data key="d3">2</data>
+      <data key="d4">paf7,paf8</data>
+    </node>
+    <node id="Goutte-de-Pluie Quarante-trois">
+      <data key="d0">goutte de pluie quarante trois</data>
+      <data key="d1">Goutte-de-Pluie Quarante-trois</data>
+      <data key="d2">Goutte-de-Pluie Quarante-trois</data>
+      <data key="d3">1</data>
+      <data key="d4">paf8</data>
+    </node>
+    <node id="Pluie">
+      <data key="d0">goutte de pluie</data>
+      <data key="d1">Pluie</data>
+      <data key="d2">Goutte-de-Pluie;Pluie</data>
+      <data key="d3">1</data>
+      <data key="d4">paf8</data>
+    </node>
+    <node id="F- Frère">
+      <data key="d0">f frere</data>
+      <data key="d1">F- Frère</data>
+      <data key="d2">F- Frère;Frère</data>
+      <data key="d3">1</data>
+      <data key="d4">paf8</data>
+    </node>
+    <edge source="R. Sammy" target="Vince Barrett">
+      <data key="d5">3</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca0,lca12</data>
+      <data key="d12">2</data>
+    </edge>
+    <edge source="R. Sammy" target="Elijah Baley">
+      <data key="d5">7</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca1,lca12,lca14,lca15</data>
+      <data key="d12">4</data>
+    </edge>
+    <edge source="R. Sammy" target="Norris">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca12</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="R. Sammy" target="R. Daneel Olivaw">
+      <data key="d5">4</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca15,lca16,lca17</data>
+      <data key="d12">3</data>
+    </edge>
+    <edge source="R. Sammy" target="Julius Enderby">
+      <data key="d5">3</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca15,lca17</data>
+      <data key="d12">2</data>
+    </edge>
+    <edge source="R. Sammy" target="Francis Clousarr">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca16</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="R. Sammy" target="Roj Nemennuh Sarton">
+      <data key="d5">5</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca17</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Vince Barrett" target="Elijah Baley">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca12</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Vince Barrett" target="Norris">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca12</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Elijah Baley" target="Julius Enderby">
+      <data key="d5">49</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10">aida, aidaient, aidait, aide, aident, aider, aides, s'opposa, s'opposaient, s'opposait, s'oppose, s'opposent, s'opposer, s'opposes</data>
+      <data key="d11">lca0,lca1,lca11,lca12,lca15,lca16,lca17,lca3,lca4,lca5,lca6,lca7,lca9</data>
+      <data key="d12">13</data>
+    </edge>
+    <edge source="Elijah Baley" target="Pierre">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca0</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Elijah Baley" target="Jacques">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca0</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Elijah Baley" target="R. Daneel Olivaw">
+      <data key="d5">106</data>
+      <data key="d6">4</data>
+      <data key="d7">3</data>
+      <data key="d8">positive</data>
+      <data key="d9">3</data>
+      <data key="d10">aima, aimaient, aimait, aime, aiment, aimer, aimes, ami, desarmes, mefiance, menace, paix</data>
+      <data key="d11">lca1,lca10,lca11,lca12,lca13,lca14,lca15,lca16,lca17,lca2,lca3,lca4,lca5,lca6,lca7,lca8,lca9</data>
+      <data key="d12">17</data>
+    </edge>
+    <edge source="Elijah Baley" target="Roj Nemennuh Sarton">
+      <data key="d5">13</data>
+      <data key="d6">3</data>
+      <data key="d7">3</data>
+      <data key="d8">positive</data>
+      <data key="d9">3</data>
+      <data key="d10">aida, aidaient, aidait, aide, aident, aider, aides</data>
+      <data key="d11">lca16,lca17,lca4,lca6,lca7,lca9</data>
+      <data key="d12">6</data>
+    </edge>
+    <edge source="Elijah Baley" target="Fastolfe">
+      <data key="d5">24</data>
+      <data key="d6">3</data>
+      <data key="d7">3</data>
+      <data key="d8">positive</data>
+      <data key="d9">3</data>
+      <data key="d10">aida, aidaient, aidait, aide, aident, aider, aides, estima, estimaient, estimait, estime, estiment, estimer, estimes</data>
+      <data key="d11">lca14,lca15,lca6,lca7,lca8,lca9</data>
+      <data key="d12">6</data>
+    </edge>
+    <edge source="Elijah Baley" target="Ben">
+      <data key="d5">3</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca10</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Elijah Baley" target="A. Gerrigel">
+      <data key="d5">6</data>
+      <data key="d6">-3</data>
+      <data key="d7">-3</data>
+      <data key="d8">negative</data>
+      <data key="d9">3</data>
+      <data key="d10">opposa, opposaient, opposait, oppose, opposent, opposer, opposes</data>
+      <data key="d11">lca11,lca12</data>
+      <data key="d12">2</data>
+    </edge>
+    <edge source="Elijah Baley" target="Francis Clousarr">
+      <data key="d5">3</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca11,lca14,lca16</data>
+      <data key="d12">3</data>
+    </edge>
+    <edge source="Elijah Baley" target="Paul Gerhard">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca11</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Elijah Baley" target="Norris">
+      <data key="d5">6</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca12</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Elijah Baley" target="Jessie">
+      <data key="d5">3</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca13,lca3</data>
+      <data key="d12">2</data>
+    </edge>
+    <edge source="Elijah Baley" target="Jézabel">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca3</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Elijah Baley" target="Elie">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca3</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Elijah Baley" target="Bentley Baley">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca3</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Julius Enderby" target="Pierre">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca0</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Julius Enderby" target="Jacques">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca0</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Julius Enderby" target="Roj Nemennuh Sarton">
+      <data key="d5">16</data>
+      <data key="d6">3</data>
+      <data key="d7">3</data>
+      <data key="d8">positive</data>
+      <data key="d9">3</data>
+      <data key="d10">aida, aidaient, aidait, aide, aident, aider, aides</data>
+      <data key="d11">lca12,lca17,lca6,lca7,lca9</data>
+      <data key="d12">5</data>
+    </edge>
+    <edge source="Julius Enderby" target="R. Daneel Olivaw">
+      <data key="d5">18</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca12,lca15,lca16,lca17,lca4,lca6,lca7</data>
+      <data key="d12">7</data>
+    </edge>
+    <edge source="Julius Enderby" target="Fastolfe">
+      <data key="d5">9</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca12,lca6,lca7</data>
+      <data key="d12">3</data>
+    </edge>
+    <edge source="Julius Enderby" target="Jessie">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca3</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Roj Nemennuh Sarton" target="R. Daneel Olivaw">
+      <data key="d5">18</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca17,lca4,lca7</data>
+      <data key="d12">3</data>
+    </edge>
+    <edge source="Roj Nemennuh Sarton" target="Fastolfe">
+      <data key="d5">4</data>
+      <data key="d6">3</data>
+      <data key="d7">3</data>
+      <data key="d8">positive</data>
+      <data key="d9">3</data>
+      <data key="d10">aida, aidaient, aidait, aide, aident, aider, aides</data>
+      <data key="d11">lca6,lca7</data>
+      <data key="d12">2</data>
+    </edge>
+    <edge source="Pierre" target="Jacques">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca0</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="R. Daneel Olivaw" target="A. Gerrigel">
+      <data key="d5">5</data>
+      <data key="d6">-3</data>
+      <data key="d7">-3</data>
+      <data key="d8">negative</data>
+      <data key="d9">3</data>
+      <data key="d10">trompait</data>
+      <data key="d11">lca11,lca12,lca15,lca17</data>
+      <data key="d12">4</data>
+    </edge>
+    <edge source="R. Daneel Olivaw" target="Fastolfe">
+      <data key="d5">14</data>
+      <data key="d6">2</data>
+      <data key="d7">2</data>
+      <data key="d8">positive</data>
+      <data key="d9">2</data>
+      <data key="d10">aida, aidaient, aidait, aide, aident, aider, aides, trahi, trahir, trahissent, trahit</data>
+      <data key="d11">lca12,lca17,lca6,lca7,lca8</data>
+      <data key="d12">5</data>
+    </edge>
+    <edge source="R. Daneel Olivaw" target="Jessie">
+      <data key="d5">5</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca13,lca3,lca5</data>
+      <data key="d12">3</data>
+    </edge>
+    <edge source="R. Daneel Olivaw" target="Francis Clousarr">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca13,lca14</data>
+      <data key="d12">2</data>
+    </edge>
+    <edge source="R. Daneel Olivaw" target="Bentley Baley">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca3</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="R. Daneel Olivaw" target="Hari Seldon">
+      <data key="d5">9</data>
+      <data key="d6">3</data>
+      <data key="d7">3</data>
+      <data key="d8">positive</data>
+      <data key="d9">3</data>
+      <data key="d10">aide</data>
+      <data key="d11">paf18</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="R. Daneel Olivaw" target="Raych Seldon">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf18</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Jessie" target="Jézabel">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca3</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Jane Myers" target="Elisabeth">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca13</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Jézabel" target="Elie">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca3</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Jézabel" target="Ahab">
+      <data key="d5">4</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca3</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Jézabel" target="Jéhu">
+      <data key="d5">4</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca3</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Jézabel" target="Naboth">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca3</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Ahab" target="Jéhu">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">lca3</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Cléon">
+      <data key="d5">11</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10">dominait, estiment</data>
+      <data key="d11">paf0</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Eto Demerzel">
+      <data key="d5">6</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf0,paf1,paf17,paf3</data>
+      <data key="d12">4</data>
+    </edge>
+    <edge source="Hari Seldon" target="Alban Wellis">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf0</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Hummin">
+      <data key="d5">53</data>
+      <data key="d6">2</data>
+      <data key="d7">2</data>
+      <data key="d8">positive</data>
+      <data key="d9">2</data>
+      <data key="d10">aide, ignorait</data>
+      <data key="d11">paf0,paf1,paf11,paf12,paf13,paf18,paf6</data>
+      <data key="d12">7</data>
+    </edge>
+    <edge source="Hari Seldon" target="Dors Venabili">
+      <data key="d5">69</data>
+      <data key="d6">2</data>
+      <data key="d7">2</data>
+      <data key="d8">positive</data>
+      <data key="d9">2</data>
+      <data key="d10">ami, neutre</data>
+      <data key="d11">paf10,paf11,paf12,paf13,paf14,paf15,paf16,paf17,paf18,paf3,paf5,paf6,paf7,paf8,paf9</data>
+      <data key="d12">15</data>
+    </edge>
+    <edge source="Hari Seldon" target="Mycélium Soixante-douze">
+      <data key="d5">6</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf10,paf11</data>
+      <data key="d12">2</data>
+    </edge>
+    <edge source="Hari Seldon" target="Maître-du-Soleil Quatorze">
+      <data key="d5">3</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf11,paf18</data>
+      <data key="d12">2</data>
+    </edge>
+    <edge source="Hari Seldon" target="Chetter">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf11</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Dahl">
+      <data key="d5">12</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf12,paf15,paf16</data>
+      <data key="d12">3</data>
+    </edge>
+    <edge source="Hari Seldon" target="Sire">
+      <data key="d5">7</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf12,paf3</data>
+      <data key="d12">2</data>
+    </edge>
+    <edge source="Hari Seldon" target="Tisalver">
+      <data key="d5">26</data>
+      <data key="d6">1</data>
+      <data key="d7">1</data>
+      <data key="d8">positive</data>
+      <data key="d9">1</data>
+      <data key="d10">estima</data>
+      <data key="d11">paf12,paf13,paf14,paf15</data>
+      <data key="d12">4</data>
+    </edge>
+    <edge source="Hari Seldon" target="Casilia">
+      <data key="d5">6</data>
+      <data key="d6">3</data>
+      <data key="d7">3</data>
+      <data key="d8">positive</data>
+      <data key="d9">3</data>
+      <data key="d10">reconforta, reconfortaient, reconfortait, reconforte, reconfortent, reconforter, reconfortes</data>
+      <data key="d11">paf12,paf13</data>
+      <data key="d12">2</data>
+    </edge>
+    <edge source="Hari Seldon" target="Hano Lindor">
+      <data key="d5">2</data>
+      <data key="d6">1</data>
+      <data key="d7">1</data>
+      <data key="d8">positive</data>
+      <data key="d9">1</data>
+      <data key="d10">estima</data>
+      <data key="d11">paf12</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Amaryl">
+      <data key="d5">10</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10">neutre</data>
+      <data key="d11">paf12</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Anat Bigell">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf12</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Raych">
+      <data key="d5">44</data>
+      <data key="d6">-3</data>
+      <data key="d7">-3</data>
+      <data key="d8">negative</data>
+      <data key="d9">3</data>
+      <data key="d10">blessa, blessaient, blessait, blesse, blessent, blesser, blesses</data>
+      <data key="d11">paf13,paf14,paf15,paf16,paf17</data>
+      <data key="d12">5</data>
+    </edge>
+    <edge source="Hari Seldon" target="Mère Rittah">
+      <data key="d5">9</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf13</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Ba-Lee">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf13</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Davan">
+      <data key="d5">4</data>
+      <data key="d6">2</data>
+      <data key="d7">2</data>
+      <data key="d8">positive</data>
+      <data key="d9">2</data>
+      <data key="d10">aide</data>
+      <data key="d11">paf14,paf15</data>
+      <data key="d12">2</data>
+    </edge>
+    <edge source="Hari Seldon" target="Yugo Amaryl">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf14</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Kan">
+      <data key="d5">8</data>
+      <data key="d6">-2</data>
+      <data key="d7">-2</data>
+      <data key="d8">negative</data>
+      <data key="d9">2</data>
+      <data key="d10">mepris</data>
+      <data key="d11">paf15,paf16,paf17,paf3,paf6</data>
+      <data key="d12">5</data>
+    </edge>
+    <edge source="Hari Seldon" target="Lanel Russ">
+      <data key="d5">4</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf15</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Dors Venabili de Cinna">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf15</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Astinwald">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf15</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Mannix IV">
+      <data key="d5">5</data>
+      <data key="d6">3</data>
+      <data key="d7">3</data>
+      <data key="d8">positive</data>
+      <data key="d9">3</data>
+      <data key="d10">ami, paix</data>
+      <data key="d11">paf16,paf17</data>
+      <data key="d12">2</data>
+    </edge>
+    <edge source="Hari Seldon" target="Emmer Thalus">
+      <data key="d5">6</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf16</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Chetter Hummin">
+      <data key="d5">27</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10">ami, mepris</data>
+      <data key="d11">paf16,paf17,paf2,paf3,paf8</data>
+      <data key="d12">5</data>
+    </edge>
+    <edge source="Hari Seldon" target="Rachelle">
+      <data key="d5">14</data>
+      <data key="d6">-2</data>
+      <data key="d7">-2</data>
+      <data key="d8">negative</data>
+      <data key="d9">2</data>
+      <data key="d10">attaqua, attaquaient, attaquait, attaque, attaquent, attaquer, attaques, paix</data>
+      <data key="d11">paf16</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Rachelle Ire">
+      <data key="d5">10</data>
+      <data key="d6">2</data>
+      <data key="d7">2</data>
+      <data key="d8">positive</data>
+      <data key="d9">2</data>
+      <data key="d10">ami, mepris</data>
+      <data key="d11">paf17</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Raych Seldon">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10">ignore</data>
+      <data key="d11">paf18</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Alem">
+      <data key="d5">5</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf1</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Lisung Randa">
+      <data key="d5">7</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf4</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Kiangtow Randa">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf4</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Leggen">
+      <data key="d5">4</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf4,paf6</data>
+      <data key="d12">2</data>
+    </edge>
+    <edge source="Hari Seldon" target="Clowzia">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf5</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Perplexité de Benastra">
+      <data key="d5">3</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf5</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Jenarr Leggen">
+      <data key="d5">4</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf5</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Endor Levanian">
+      <data key="d5">2</data>
+      <data key="d6">3</data>
+      <data key="d7">3</data>
+      <data key="d8">positive</data>
+      <data key="d9">3</data>
+      <data key="d10">aiment</data>
+      <data key="d11">paf7</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Maître-du- Soleil">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf7</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Grisnuage">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf7</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Pluie">
+      <data key="d5">4</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf8</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="F- Frère">
+      <data key="d5">4</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf8</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hari Seldon" target="Goutte-de-Pluie Quarante">
+      <data key="d5">5</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf8</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Cléon" target="Eto Demerzel">
+      <data key="d5">19</data>
+      <data key="d6">-3</data>
+      <data key="d7">-3</data>
+      <data key="d8">negative</data>
+      <data key="d9">3</data>
+      <data key="d10">detestait</data>
+      <data key="d11">paf0,paf12,paf3</data>
+      <data key="d12">3</data>
+    </edge>
+    <edge source="Cléon" target="Sire">
+      <data key="d5">9</data>
+      <data key="d6">2</data>
+      <data key="d7">2</data>
+      <data key="d8">positive</data>
+      <data key="d9">2</data>
+      <data key="d10">ami</data>
+      <data key="d11">paf0,paf12,paf3</data>
+      <data key="d12">3</data>
+    </edge>
+    <edge source="Cléon" target="Kan">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf12,paf3</data>
+      <data key="d12">2</data>
+    </edge>
+    <edge source="Eto Demerzel" target="Sire">
+      <data key="d5">10</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10">ignore</data>
+      <data key="d11">paf0,paf12,paf3</data>
+      <data key="d12">3</data>
+    </edge>
+    <edge source="Eto Demerzel" target="Kan">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf3</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Eto Demerzel" target="Hummin">
+      <data key="d5">3</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf6</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Sire" target="Alban Wellis">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf0</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Sire" target="Kan">
+      <data key="d5">11</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf12,paf3</data>
+      <data key="d12">2</data>
+    </edge>
+    <edge source="Sire" target="Hummin">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf12</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hummin" target="Dors Venabili">
+      <data key="d5">5</data>
+      <data key="d6">3</data>
+      <data key="d7">3</data>
+      <data key="d8">positive</data>
+      <data key="d9">3</data>
+      <data key="d10">aime</data>
+      <data key="d11">paf11,paf13,paf15,paf6</data>
+      <data key="d12">4</data>
+    </edge>
+    <edge source="Hummin" target="Chetter">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf11</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hummin" target="Dahl">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf12</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hummin" target="Alem">
+      <data key="d5">7</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf1</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Hummin" target="Lisung Randa">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf6</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dors Venabili" target="Mycélium Soixante-douze">
+      <data key="d5">3</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf10,paf11</data>
+      <data key="d12">2</data>
+    </edge>
+    <edge source="Dors Venabili" target="Maître-du-Soleil Quatorze">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf11</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dors Venabili" target="Chetter">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf11</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dors Venabili" target="Dahl">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf12</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dors Venabili" target="Tisalver">
+      <data key="d5">7</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf12,paf13,paf14</data>
+      <data key="d12">3</data>
+    </edge>
+    <edge source="Dors Venabili" target="Mère Rittah">
+      <data key="d5">4</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf13</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dors Venabili" target="Marron">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf13</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dors Venabili" target="Raych">
+      <data key="d5">11</data>
+      <data key="d6">2</data>
+      <data key="d7">2</data>
+      <data key="d8">positive</data>
+      <data key="d9">2</data>
+      <data key="d10">ami</data>
+      <data key="d11">paf14,paf16,paf17</data>
+      <data key="d12">3</data>
+    </edge>
+    <edge source="Dors Venabili" target="Marlo Tanto">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf14</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dors Venabili" target="Kan">
+      <data key="d5">3</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf16</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dors Venabili" target="Emmer Thalus">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf16</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dors Venabili" target="Rachelle">
+      <data key="d5">4</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf16</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dors Venabili" target="Mannix IV">
+      <data key="d5">2</data>
+      <data key="d6">2</data>
+      <data key="d7">2</data>
+      <data key="d8">positive</data>
+      <data key="d9">2</data>
+      <data key="d10">ami</data>
+      <data key="d11">paf17</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dors Venabili" target="Rachelle Ire">
+      <data key="d5">2</data>
+      <data key="d6">2</data>
+      <data key="d7">2</data>
+      <data key="d8">positive</data>
+      <data key="d9">2</data>
+      <data key="d10">ami</data>
+      <data key="d11">paf17</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dors Venabili" target="Chetter Hummin">
+      <data key="d5">2</data>
+      <data key="d6">2</data>
+      <data key="d7">2</data>
+      <data key="d8">positive</data>
+      <data key="d9">2</data>
+      <data key="d10">ami</data>
+      <data key="d11">paf17</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dors Venabili" target="Clowzia">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf5</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dors Venabili" target="Perplexité de Benastra">
+      <data key="d5">3</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf5</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dors Venabili" target="Jenarr Leggen">
+      <data key="d5">3</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf5</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dors Venabili" target="Endor Levanian">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf7</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dors Venabili" target="Grisnuage">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf7</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dors Venabili" target="Pluie">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf8</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dors Venabili" target="Goutte-de-Pluie Quarante">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf8</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Maître-du-Soleil Quatorze" target="Chetter Hummin">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf8</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dahl" target="Tisalver">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf12</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dahl" target="Raych">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf15,paf16</data>
+      <data key="d12">2</data>
+    </edge>
+    <edge source="Dahl" target="Kan">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf15</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dahl" target="Davan">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf15</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dahl" target="Emmer Thalus">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf16</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dahl" target="Chetter Hummin">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf16</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Dahl" target="Rachelle">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf16</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Kan" target="Mannix IV">
+      <data key="d5">3</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf16</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Kan" target="Raych">
+      <data key="d5">1</data>
+      <data key="d6">2</data>
+      <data key="d7">2</data>
+      <data key="d8">positive</data>
+      <data key="d9">2</data>
+      <data key="d10">ami</data>
+      <data key="d11">paf16</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Kan" target="Chetter Hummin">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf16,paf17</data>
+      <data key="d12">2</data>
+    </edge>
+    <edge source="Kan" target="Rachelle">
+      <data key="d5">7</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf16</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Kan" target="Rachelle Ire">
+      <data key="d5">5</data>
+      <data key="d6">3</data>
+      <data key="d7">3</data>
+      <data key="d8">positive</data>
+      <data key="d9">3</data>
+      <data key="d10">coopera, cooperaient, cooperait, coopere, cooperent, cooperer, cooperes</data>
+      <data key="d11">paf17</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Kan" target="Leggen">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf6</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Kan" target="Damiano Nord">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf6</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Tisalver" target="Casilia">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf12,paf13</data>
+      <data key="d12">2</data>
+    </edge>
+    <edge source="Tisalver" target="Hano Lindor">
+      <data key="d5">3</data>
+      <data key="d6">2</data>
+      <data key="d7">2</data>
+      <data key="d8">positive</data>
+      <data key="d9">2</data>
+      <data key="d10">estima</data>
+      <data key="d11">paf12</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Tisalver" target="Raych">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf15</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Mère Rittah" target="Raych">
+      <data key="d5">3</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf13</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Yugo Amaryl" target="Emmer Thalus">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf16</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Yugo Amaryl" target="Raych Seldon">
+      <data key="d5">2</data>
+      <data key="d6">3</data>
+      <data key="d7">3</data>
+      <data key="d8">positive</data>
+      <data key="d9">3</data>
+      <data key="d10">ami</data>
+      <data key="d11">paf18</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Raych" target="Davan">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf14</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Raych" target="Lanel Russ">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf15</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Raych" target="Astinwald">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf15</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Raych" target="Emmer Thalus">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf16</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Raych" target="Rachelle">
+      <data key="d5">7</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf16</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Raych" target="Mannix IV">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf17</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Raych" target="Rachelle Ire">
+      <data key="d5">5</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf17</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Raych" target="Chetter Hummin">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf17</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Lanel Russ" target="Astinwald">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf15</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Mannix IV" target="Rachelle Ire">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf17</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Chetter Hummin" target="Rachelle">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf16</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Chetter Hummin" target="Rachelle Ire">
+      <data key="d5">5</data>
+      <data key="d6">3</data>
+      <data key="d7">3</data>
+      <data key="d8">positive</data>
+      <data key="d9">3</data>
+      <data key="d10">ami</data>
+      <data key="d11">paf17</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Chetter Hummin" target="Endor Levanian">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf7</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Lisung Randa" target="Kiangtow Randa">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf4</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Leggen" target="Clowzia">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf4</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Leggen" target="Damiano Nord">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf6</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Perplexité de Benastra" target="Jenarr Leggen">
+      <data key="d5">1</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf5</data>
+      <data key="d12">1</data>
+    </edge>
+    <edge source="Goutte-de-Pluie Quarante" target="Pluie">
+      <data key="d5">2</data>
+      <data key="d6">0</data>
+      <data key="d7">0</data>
+      <data key="d8">neutral</data>
+      <data key="d9">0</data>
+      <data key="d10" />
+      <data key="d11">paf8</data>
+      <data key="d12">1</data>
+    </edge>
+  </graph>
+</graphml>
